@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
 		FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */; };
-		FAC04B69290327BA00B7F6BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B68290327BA00B7F6BD /* ViewController.swift */; };
-		FAC04B6C290327BA00B7F6BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC04B6A290327BA00B7F6BD /* Main.storyboard */; };
-		FAC04B6F290327BA00B7F6BD /* CISApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B6D290327BA00B7F6BD /* CISApp.xcdatamodeld */; };
+		FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B68290327BA00B7F6BD /* MainViewController.swift */; };
 		FAC04B71290327BB00B7F6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC04B70290327BB00B7F6BD /* Assets.xcassets */; };
 		FAC04B74290327BB00B7F6BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC04B72290327BB00B7F6BD /* LaunchScreen.storyboard */; };
 		FAC04B7F290327BB00B7F6BD /* CISAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B7E290327BB00B7F6BD /* CISAppTests.swift */; };
 		FAC04B89290327BB00B7F6BD /* CISAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B88290327BB00B7F6BD /* CISAppUITests.swift */; };
 		FAC04B8B290327BB00B7F6BD /* CISAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B8A290327BB00B7F6BD /* CISAppUITestsLaunchTests.swift */; };
+		FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B9E29032BFD00B7F6BD /* AssetColors.swift */; };
+		FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04BA029032E0D00B7F6BD /* FontLib.swift */; };
+		FAC04BA42903332E00B7F6BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04BA32903332E00B7F6BD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +41,7 @@
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC04B64290327BA00B7F6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAC04B68290327BA00B7F6BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAC04B6B290327BA00B7F6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAC04B6E290327BA00B7F6BD /* CISApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CISApp.xcdatamodel; sourceTree = "<group>"; };
+		FAC04B68290327BA00B7F6BD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FAC04B70290327BB00B7F6BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC04B73290327BB00B7F6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC04B75290327BB00B7F6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,9 @@
 		FAC04B84290327BB00B7F6BD /* CISAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CISAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC04B88290327BB00B7F6BD /* CISAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppUITests.swift; sourceTree = "<group>"; };
 		FAC04B8A290327BB00B7F6BD /* CISAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAC04B9E29032BFD00B7F6BD /* AssetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetColors.swift; sourceTree = "<group>"; };
+		FAC04BA029032E0D00B7F6BD /* FontLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLib.swift; sourceTree = "<group>"; };
+		FAC04BA32903332E00B7F6BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +103,9 @@
 		FAC04B63290327BA00B7F6BD /* CISApp */ = {
 			isa = PBXGroup;
 			children = (
-				FAC04B64290327BA00B7F6BD /* AppDelegate.swift */,
-				FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */,
-				FAC04B68290327BA00B7F6BD /* ViewController.swift */,
-				FAC04B6A290327BA00B7F6BD /* Main.storyboard */,
-				FAC04B70290327BB00B7F6BD /* Assets.xcassets */,
-				FAC04B72290327BB00B7F6BD /* LaunchScreen.storyboard */,
-				FAC04B75290327BB00B7F6BD /* Info.plist */,
-				FAC04B6D290327BA00B7F6BD /* CISApp.xcdatamodeld */,
+				FAC04B9D2903285C00B7F6BD /* Assets */,
+				FAC04B9B2903283800B7F6BD /* App */,
+				FAC04B97290327E600B7F6BD /* AuthFlow */,
 			);
 			path = CISApp;
 			sourceTree = "<group>";
@@ -128,6 +125,68 @@
 				FAC04B8A290327BB00B7F6BD /* CISAppUITestsLaunchTests.swift */,
 			);
 			path = CISAppUITests;
+			sourceTree = "<group>";
+		};
+		FAC04B97290327E600B7F6BD /* AuthFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04BA22903331800B7F6BD /* Models */,
+				FAC04B9A2903282800B7F6BD /* StartScreen */,
+				FAC04B992903281800B7F6BD /* Login */,
+				FAC04B982903280900B7F6BD /* Registration */,
+			);
+			path = AuthFlow;
+			sourceTree = "<group>";
+		};
+		FAC04B982903280900B7F6BD /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		FAC04B992903281800B7F6BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FAC04B9A2903282800B7F6BD /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04B68290327BA00B7F6BD /* MainViewController.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		FAC04B9B2903283800B7F6BD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04B75290327BB00B7F6BD /* Info.plist */,
+				FAC04B64290327BA00B7F6BD /* AppDelegate.swift */,
+				FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */,
+				FAC04B72290327BB00B7F6BD /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FAC04B9D2903285C00B7F6BD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04B70290327BB00B7F6BD /* Assets.xcassets */,
+				FAC04B9E29032BFD00B7F6BD /* AssetColors.swift */,
+				FAC04BA029032E0D00B7F6BD /* FontLib.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAC04BA22903331800B7F6BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04BA32903332E00B7F6BD /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +295,6 @@
 			files = (
 				FAC04B74290327BB00B7F6BD /* LaunchScreen.storyboard in Resources */,
 				FAC04B71290327BB00B7F6BD /* Assets.xcassets in Resources */,
-				FAC04B6C290327BA00B7F6BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC04B69290327BA00B7F6BD /* ViewController.swift in Sources */,
+				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
+				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
+				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
 				FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */,
+				FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */,
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
-				FAC04B6F290327BA00B7F6BD /* CISApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +361,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAC04B6A290327BA00B7F6BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAC04B6B290327BA00B7F6BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAC04B72290327BB00B7F6BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,7 +495,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2A8FN782JR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CISApp/Info.plist;
+				INFOPLIST_FILE = CISApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -471,7 +523,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2A8FN782JR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CISApp/Info.plist;
+				INFOPLIST_FILE = CISApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -606,19 +658,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FAC04B6D290327BA00B7F6BD /* CISApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FAC04B6E290327BA00B7F6BD /* CISApp.xcdatamodel */,
-			);
-			currentVersion = FAC04B6E290327BA00B7F6BD /* CISApp.xcdatamodel */;
-			path = CISApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FAC04B59290327BA00B7F6BD /* Project object */;
 }
