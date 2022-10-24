@@ -1,9 +1,3 @@
-//
-//  StandartButton.swift
-//  CISApp
-//
-//  Created by Александр Воробей on 23.10.2022.
-//
 
 import Foundation
 import UIKit
@@ -13,16 +7,30 @@ final class StandartButton: UIButton {
     init(title: String) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
-        
+        setup()
     }
+    
+    @objc func onTouchDown() {
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        })
+        UIView.transition(with: self, duration: 0.2, animations: {
+            self.backgroundColor = .gray
+        })
+    }
+    
+    @objc func onTouchUp() {
+            UIView.animate(withDuration: 0.2, animations: { [weak self] in
+                self?.transform = .identity
+            })
 
+        UIView.transition(with: self, duration: 0.2, animations: {
+            self.backgroundColor = UIColor.appColor(.bgColor)
+        })
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setup()
     }
 
     private func setup() {
@@ -36,6 +44,8 @@ final class StandartButton: UIButton {
         layer.cornerRadius = 10
         backgroundColor = UIColor.appColor(.bgColor)
         setTitleColor(UIColor.appColor(.whiteFontColor), for: .normal)
+        addTarget(self, action: #selector(onTouchDown), for: .touchDown)
+        addTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
     }
 
 }

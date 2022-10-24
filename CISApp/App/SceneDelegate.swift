@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  CISApp
-//
-//  Created by Александр Воробей on 21.10.2022.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
