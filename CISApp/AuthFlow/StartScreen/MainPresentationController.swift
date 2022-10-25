@@ -10,10 +10,6 @@ class PresentationController: UIPresentationController {
         roundCorners(cornerRadius: 30)
         makeConstraints()
     }
-    override func containerViewDidLayoutSubviews() {
-        super.containerViewDidLayoutSubviews()
-        presentedView?.frame = frameOfPresentedViewInContainerView
-    }
     
     func roundCorners(cornerRadius: CGFloat) {
         presentedView?.layer.cornerRadius = cornerRadius
@@ -82,9 +78,19 @@ class MainCardViewController: UIViewController {
     }
 }
 
-enum presentationDirection {
+enum PresentationDirection {
     case top
     case left
     case right
     case bottom
+}
+
+
+class SlideInPresentationManager: NSObject {
+    var direction: PresentationDirection = .bottom
+    
+}
+
+extension SlideInPresentationManager: UIViewControllerTransitioningDelegate {
+
 }

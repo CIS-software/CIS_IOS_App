@@ -4,7 +4,7 @@ import UIKit
 
 final class StandartButton: UIButton {
 
-    init(title: String) {
+    init(title: String) { 
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setup()
