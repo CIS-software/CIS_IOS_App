@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CDD290917610052F131 /* PresentAnimation.swift */; };
+		FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE1290917B90052F131 /* DismissAnimation.swift */; };
+		FA036CE42909182B0052F131 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE32909182B0052F131 /* PresentationController.swift */; };
+		FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE5290918810052F131 /* PresentationDirections.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
 		FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */; };
 		FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B68290327BA00B7F6BD /* MainViewController.swift */; };
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA036CDD290917610052F131 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		FA036CE1290917B90052F131 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		FA036CE32909182B0052F131 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		FA036CE5290918810052F131 /* PresentationDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDirections.swift; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC04B64290327BA00B7F6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA036CDC290916E80052F131 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FADA5D032905878900821A5A /* StandartButton.swift */,
+				FA036CDD290917610052F131 /* PresentAnimation.swift */,
+				FA036CE1290917B90052F131 /* DismissAnimation.swift */,
+				FA036CE32909182B0052F131 /* PresentationController.swift */,
+				FA036CE5290918810052F131 /* PresentationDirections.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FAC04B58290327BA00B7F6BD = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +181,9 @@
 		FAC04B9A2903282800B7F6BD /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA036CDC290916E80052F131 /* Views */,
 				FAC04B68290327BA00B7F6BD /* MainViewController.swift */,
 				FADA5D01290584C400821A5A /* MainPresentationController.swift */,
-				FADA5D032905878900821A5A /* StandartButton.swift */,
 			);
 			path = StartScreen;
 			sourceTree = "<group>";
@@ -330,13 +350,17 @@
 			files = (
 				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
 				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
+				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
+				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
 				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
 				FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */,
+				FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */,
 				FADA5D042905878900821A5A /* StandartButton.swift in Sources */,
 				FADA5D062905BC8300821A5A /* Localization.swift in Sources */,
 				FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */,
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
 				FADA5D02290584C400821A5A /* MainPresentationController.swift in Sources */,
+				FA036CE42909182B0052F131 /* PresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
