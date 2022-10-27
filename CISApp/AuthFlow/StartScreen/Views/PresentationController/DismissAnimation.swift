@@ -2,18 +2,19 @@ import Foundation
 import UIKit
 
 class DismissAnimation: NSObject {
-    let duration: TimeInterval = 0.4
+    let duration: TimeInterval
     
     let direction: PresentationDirections
-
-    init(direction: PresentationDirections) {
+    
+    init(direction: PresentationDirections, duration: TimeInterval) {
         self.direction = direction
+        self.duration = duration
         super.init()
     }
     
     private func animator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
         let from = transitionContext.view(forKey: .from)!
-        let initialFrame = transitionContext.initialFrame(for: transitionContext.viewController(forKey: .from)!)
+        let initialFrame = transitionContext.finalFrame(for: transitionContext.viewController(forKey: .from)!)
         
         var fromeFrame: CGRect
         

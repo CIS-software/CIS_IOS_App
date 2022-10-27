@@ -2,12 +2,13 @@ import Foundation
 import UIKit
 
 class PresentAnimation: NSObject {
-    let duration: TimeInterval = 1.6
+    let duration: TimeInterval
     
     let direction: PresentationDirections
     
-    init(direction: PresentationDirections) {
+    init(direction: PresentationDirections, duration: TimeInterval) {
         self.direction = direction
+        self.duration = duration
         super.init()
     }
 

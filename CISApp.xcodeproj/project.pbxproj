@@ -11,6 +11,9 @@
 		FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE1290917B90052F131 /* DismissAnimation.swift */; };
 		FA036CE42909182B0052F131 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE32909182B0052F131 /* PresentationController.swift */; };
 		FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE5290918810052F131 /* PresentationDirections.swift */; };
+		FA036D3A290A8A240052F131 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D37290A8A240052F131 /* AppCoordinator.swift */; };
+		FA036D3B290A8A240052F131 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D39290A8A240052F131 /* Coordinator.swift */; };
+		FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D3D290A8B650052F131 /* AuthCoordinator.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
 		FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */; };
 		FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B68290327BA00B7F6BD /* MainViewController.swift */; };
@@ -22,7 +25,7 @@
 		FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B9E29032BFD00B7F6BD /* AssetColors.swift */; };
 		FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04BA029032E0D00B7F6BD /* FontLib.swift */; };
 		FAC04BA42903332E00B7F6BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04BA32903332E00B7F6BD /* User.swift */; };
-		FADA5D02290584C400821A5A /* MainPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D01290584C400821A5A /* MainPresentationController.swift */; };
+		FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D01290584C400821A5A /* MainCardViewController.swift */; };
 		FADA5D042905878900821A5A /* StandartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D032905878900821A5A /* StandartButton.swift */; };
 		FADA5D062905BC8300821A5A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D052905BC8300821A5A /* Localization.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,9 @@
 		FA036CE1290917B90052F131 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		FA036CE32909182B0052F131 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		FA036CE5290918810052F131 /* PresentationDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDirections.swift; sourceTree = "<group>"; };
+		FA036D37290A8A240052F131 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FA036D39290A8A240052F131 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FA036D3D290A8B650052F131 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC04B64290327BA00B7F6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +70,7 @@
 		FAC04B9E29032BFD00B7F6BD /* AssetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetColors.swift; sourceTree = "<group>"; };
 		FAC04BA029032E0D00B7F6BD /* FontLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLib.swift; sourceTree = "<group>"; };
 		FAC04BA32903332E00B7F6BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FADA5D01290584C400821A5A /* MainPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentationController.swift; sourceTree = "<group>"; };
+		FADA5D01290584C400821A5A /* MainCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardViewController.swift; sourceTree = "<group>"; };
 		FADA5D032905878900821A5A /* StandartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartButton.swift; sourceTree = "<group>"; };
 		FADA5D052905BC8300821A5A /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,13 +103,47 @@
 		FA036CDC290916E80052F131 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA036D40290A92210052F131 /* PresentationController */,
 				FADA5D032905878900821A5A /* StandartButton.swift */,
-				FA036CDD290917610052F131 /* PresentAnimation.swift */,
-				FA036CE1290917B90052F131 /* DismissAnimation.swift */,
-				FA036CE32909182B0052F131 /* PresentationController.swift */,
-				FA036CE5290918810052F131 /* PresentationDirections.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA036D36290A8A240052F131 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FA036D3C290A8A840052F131 /* AuthFlow */,
+				FA036D37290A8A240052F131 /* AppCoordinator.swift */,
+				FA036D38290A8A240052F131 /* Protocols */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FA036D38290A8A240052F131 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA036D39290A8A240052F131 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA036D3C290A8A840052F131 /* AuthFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FA036D3D290A8B650052F131 /* AuthCoordinator.swift */,
+			);
+			path = AuthFlow;
+			sourceTree = "<group>";
+		};
+		FA036D40290A92210052F131 /* PresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				FA036CE5290918810052F131 /* PresentationDirections.swift */,
+				FA036CE32909182B0052F131 /* PresentationController.swift */,
+				FA036CDD290917610052F131 /* PresentAnimation.swift */,
+				FA036CE1290917B90052F131 /* DismissAnimation.swift */,
+			);
+			path = PresentationController;
 			sourceTree = "<group>";
 		};
 		FAC04B58290327BA00B7F6BD = {
@@ -129,9 +169,10 @@
 		FAC04B63290327BA00B7F6BD /* CISApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA036D36290A8A240052F131 /* Coordinator */,
+				FAC04B97290327E600B7F6BD /* AuthFlow */,
 				FAC04B9D2903285C00B7F6BD /* Assets */,
 				FAC04B9B2903283800B7F6BD /* App */,
-				FAC04B97290327E600B7F6BD /* AuthFlow */,
 			);
 			path = CISApp;
 			sourceTree = "<group>";
@@ -183,7 +224,7 @@
 			children = (
 				FA036CDC290916E80052F131 /* Views */,
 				FAC04B68290327BA00B7F6BD /* MainViewController.swift */,
-				FADA5D01290584C400821A5A /* MainPresentationController.swift */,
+				FADA5D01290584C400821A5A /* MainCardViewController.swift */,
 			);
 			path = StartScreen;
 			sourceTree = "<group>";
@@ -350,16 +391,19 @@
 			files = (
 				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
 				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
+				FA036D3B290A8A240052F131 /* Coordinator.swift in Sources */,
 				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
 				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
 				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
+				FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */,
 				FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */,
+				FA036D3A290A8A240052F131 /* AppCoordinator.swift in Sources */,
 				FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */,
 				FADA5D042905878900821A5A /* StandartButton.swift in Sources */,
 				FADA5D062905BC8300821A5A /* Localization.swift in Sources */,
 				FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */,
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
-				FADA5D02290584C400821A5A /* MainPresentationController.swift in Sources */,
+				FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */,
 				FA036CE42909182B0052F131 /* PresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
