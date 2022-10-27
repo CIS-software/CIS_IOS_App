@@ -1,15 +1,10 @@
-//
-//  SceneDelegate.swift
-//  CISApp
-//
-//  Created by Александр Воробей on 21.10.2022.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    var coordinator: Coordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,12 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let window = UIWindow(windowScene: windowScene)
+        window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = MainViewController()
-        window.overrideUserInterfaceStyle = .dark
-        self.window = window
-        self.window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .dark
+        
+        coordinator = AppCoordinator(window: window!)
+        
+        coordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
