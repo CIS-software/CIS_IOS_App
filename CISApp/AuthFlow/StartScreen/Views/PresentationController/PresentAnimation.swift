@@ -13,10 +13,8 @@ class PresentAnimation: NSObject {
     }
 
     private func animator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
-        // transitionContext.view содержит всю нужную информацию, извлекаем её
         let to = transitionContext.view(forKey: .to)!
-        let finalFrame = transitionContext.finalFrame(for: transitionContext.viewController(forKey: .to)!) // Тот самый фрейм, который мы задали в PresentationController
-        // Смещаем контроллер за границу экрана
+        let finalFrame = transitionContext.finalFrame(for: transitionContext.viewController(forKey: .to)!)
         switch direction {
         case .bottom:
             to.frame = finalFrame.offsetBy(dx: 0, dy: finalFrame.height)
@@ -29,11 +27,10 @@ class PresentAnimation: NSObject {
         }
 
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeIn) {
-            to.frame = finalFrame // Возвращаем на место, так он выезжает снизу
+            to.frame = finalFrame
         }
 
         animator.addCompletion { (position) in
-        // Завершаем переход, если он не был отменён
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
 
