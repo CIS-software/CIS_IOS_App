@@ -15,6 +15,8 @@
 		FA036D3B290A8A240052F131 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D39290A8A240052F131 /* Coordinator.swift */; };
 		FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D3D290A8B650052F131 /* AuthCoordinator.swift */; };
 		FA036D44290AF77A0052F131 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D43290AF77A0052F131 /* TextField.swift */; };
+		FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */; };
+		FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D4B290BBE740052F131 /* UILabel+Extension.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
 		FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */; };
 		FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B68290327BA00B7F6BD /* MainViewController.swift */; };
@@ -29,6 +31,8 @@
 		FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D01290584C400821A5A /* MainCardViewController.swift */; };
 		FADA5D042905878900821A5A /* StandartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D032905878900821A5A /* StandartButton.swift */; };
 		FADA5D062905BC8300821A5A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D052905BC8300821A5A /* Localization.swift */; };
+		FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */; };
+		FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,8 @@
 		FA036D39290A8A240052F131 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FA036D3D290A8B650052F131 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		FA036D43290AF77A0052F131 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewControrller.swift; sourceTree = "<group>"; };
+		FA036D4B290BBE740052F131 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC04B64290327BA00B7F6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC04B66290327BA00B7F6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		FADA5D01290584C400821A5A /* MainCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardViewController.swift; sourceTree = "<group>"; };
 		FADA5D032905878900821A5A /* StandartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartButton.swift; sourceTree = "<group>"; };
 		FADA5D052905BC8300821A5A /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCardsCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				FA036D40290A92210052F131 /* PresentationController */,
-				FADA5D032905878900821A5A /* StandartButton.swift */,
-				FA036D43290AF77A0052F131 /* TextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FA036D39290A8A240052F131 /* Coordinator.swift */,
+				FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -147,6 +154,33 @@
 				FA036CE1290917B90052F131 /* DismissAnimation.swift */,
 			);
 			path = PresentationController;
+			sourceTree = "<group>";
+		};
+		FA036D47290BBE290052F131 /* UI+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA036D49290BBE520052F131 /* Extension */,
+				FA036D48290BBE400052F131 /* UI */,
+			);
+			path = "UI+Extensions";
+			sourceTree = "<group>";
+		};
+		FA036D48290BBE400052F131 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FADA5D032905878900821A5A /* StandartButton.swift */,
+				FA036D43290AF77A0052F131 /* TextField.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA036D49290BBE520052F131 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA036D4B290BBE740052F131 /* UILabel+Extension.swift */,
+				FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FAC04B58290327BA00B7F6BD = {
@@ -172,6 +206,7 @@
 		FAC04B63290327BA00B7F6BD /* CISApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA036D47290BBE290052F131 /* UI+Extensions */,
 				FA036D36290A8A240052F131 /* Coordinator */,
 				FAC04B97290327E600B7F6BD /* AuthFlow */,
 				FAC04B9D2903285C00B7F6BD /* Assets */,
@@ -218,6 +253,7 @@
 		FAC04B992903281800B7F6BD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -396,12 +432,15 @@
 				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
 				FA036D3B290A8A240052F131 /* Coordinator.swift in Sources */,
 				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
+				FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */,
 				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
 				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
 				FA036D44290AF77A0052F131 /* TextField.swift in Sources */,
 				FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */,
+				FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */,
 				FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */,
 				FA036D3A290A8A240052F131 /* AppCoordinator.swift in Sources */,
+				FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */,
 				FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */,
 				FADA5D042905878900821A5A /* StandartButton.swift in Sources */,
 				FADA5D062905BC8300821A5A /* Localization.swift in Sources */,
@@ -409,6 +448,7 @@
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
 				FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */,
 				FA036CE42909182B0052F131 /* PresentationController.swift in Sources */,
+				FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

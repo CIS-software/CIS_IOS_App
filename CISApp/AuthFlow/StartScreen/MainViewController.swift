@@ -4,6 +4,8 @@ class MainViewController: UIViewController {
     
     var mainCardViewController = MainCardViewController()
     
+    var authCoordinator: AuthCoordinator?
+    
     var logoStackView: UIStackView = {
         let stackView = UIStackView()
         
@@ -13,7 +15,7 @@ class MainViewController: UIViewController {
         let logoLabel = UILabel()
         
         logoImage.image = UIImage(named: "logo")
-        logoLabel.text = "КАРАТЕ\nСАЛДА"
+        logoLabel.text = Localization.titleCaps
         logoLabel.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
         logoLabel.textColor = UIColor.appColor(.whiteFontColor)
         logoLabel.numberOfLines = 2
@@ -33,23 +35,6 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        mainCardViewController.transitioningDelegate = self
-        mainCardViewController.modalPresentationStyle = .custom
-        mainCardViewController.toLoginCard = presentLoginCard
-        self.present(mainCardViewController, animated: true)
-    }
-    
-    func presentLoginCard() {
-        let loginCardVC = MainCardViewController()
-        loginCardVC.transitioningDelegate = self
-        loginCardVC.modalPresentationStyle = .custom
-        self.present(loginCardVC, animated: true)
-    }
-    
-    func presentRegisterCard() {
-        mainCardViewController.transitioningDelegate = self
-        mainCardViewController.modalPresentationStyle = .custom
-        self.present(mainCardViewController, animated: true)
     }
     
     func addSubviews() {
@@ -63,16 +48,32 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UIViewControllerTransitioningDelegate {
+class TransitioningDelegate: NSObject {
+    let presentDirection: PresentationDirections
+    let presentDuration: TimeInterval
+    
+    let dismissDirection: PresentationDirections
+    let dismissDuration: TimeInterval
+    
+    init(presentDirection: PresentationDirections, presentDuration: TimeInterval, dismissDirection: PresentationDirections, dismissDuration: TimeInterval) {
+        self.presentDirection = presentDirection
+        self.presentDuration = presentDuration
+        self.dismissDirection = dismissDirection
+        self.dismissDuration = dismissDuration
+    }
+}
+
+
+extension TransitioningDelegate: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return PresentationController(presentedViewController: presented, presenting: presenting)
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentAnimation(direction: .bottom, duration: 1.2)
+        return PresentAnimation(direction: presentDirection, duration: presentDuration)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DismissAnimation(direction: .left, duration: 0.6)
+        return DismissAnimation(direction: dismissDirection, duration: dismissDuration)
     }
 }
