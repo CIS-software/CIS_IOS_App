@@ -6,8 +6,6 @@ class AuthCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    let TD = TransitioningDelegate(presentDirection: .bottom, presentDuration: 0.6, dismissDirection: .left, dismissDuration: 0.6)
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -22,22 +20,30 @@ class AuthCoordinator: Coordinator {
 
 extension AuthCoordinator: AuthCardsCoordinatorProtocol {
     func toLoginCard() {
-        let loginCardVC = LoginCardViewController()
+        let loginCardVC = LoginCardViewController(presentDirection: .left,
+                                                  dismissDirection: .bottom,
+                                                  presentDuration: 0.6,
+                                                  dismissDuration: 0.6)
         loginCardVC.authCoordinator = self
         navigationController.present(loginCardVC, animated: true)
     }
     
     func toRegisterCard() {
-        let registerVC = LoginCardViewController()
+        let registerVC = LoginCardViewController(presentDirection: .left,
+                                                 dismissDirection: .bottom,
+                                                 presentDuration: 0.6,
+                                                 dismissDuration: 0.6)
+        registerVC.authCoordinator = self
         navigationController.present(registerVC, animated: true)
     }
     
     func toMainCard() {
-        let mainCardVC = MainCardViewController()
+        let mainCardVC = MainCardViewController(presentDirection: .bottom,
+                                                dismissDirection: .left,
+                                                presentDuration: 0.6,
+                                                dismissDuration: 0.6)
         mainCardVC.authCoordinator = self
-        mainCardVC.transitioningDelegate = TD
-        mainCardVC.modalPresentationStyle = .custom
-        navigationController.present(mainCardVC, animated: true)
+        navigationController.viewControllers.last?.present(mainCardVC, animated: true)
     }
     
     

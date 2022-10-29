@@ -2,11 +2,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var mainCardViewController = MainCardViewController()
-    
     var authCoordinator: AuthCoordinator?
     
-    var logoStackView: UIStackView = {
+    private let logoStackView: UIStackView = {
         let stackView = UIStackView()
         
         stackView.axis = .horizontal
@@ -48,32 +46,4 @@ class MainViewController: UIViewController {
     }
 }
 
-class TransitioningDelegate: NSObject {
-    let presentDirection: PresentationDirections
-    let presentDuration: TimeInterval
-    
-    let dismissDirection: PresentationDirections
-    let dismissDuration: TimeInterval
-    
-    init(presentDirection: PresentationDirections, presentDuration: TimeInterval, dismissDirection: PresentationDirections, dismissDuration: TimeInterval) {
-        self.presentDirection = presentDirection
-        self.presentDuration = presentDuration
-        self.dismissDirection = dismissDirection
-        self.dismissDuration = dismissDuration
-    }
-}
 
-
-extension TransitioningDelegate: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return PresentationController(presentedViewController: presented, presenting: presenting)
-    }
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentAnimation(direction: presentDirection, duration: presentDuration)
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DismissAnimation(direction: dismissDirection, duration: dismissDuration)
-    }
-}

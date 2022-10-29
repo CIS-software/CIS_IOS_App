@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class MainCardViewController: UIViewController {
+class MainCardViewController: CardViewController {
     var authCoordinator: AuthCoordinator?
     
     var loginButton: UIButton = {
