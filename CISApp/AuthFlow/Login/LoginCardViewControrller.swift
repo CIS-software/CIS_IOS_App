@@ -17,7 +17,7 @@ class LoginCardViewController: CardViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.enter,
-                                              withFont: .systemFont(ofSize: 20, weight: .semibold),
+                                              withFont: FontLib.Title.cardTitle,
                                               color: .appColor(.blackFontColor))
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -26,7 +26,7 @@ class LoginCardViewController: CardViewController {
     
     private let emailLabel: UILabel = {
         let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
-                                              withFont: .systemFont(ofSize: 18, weight: .semibold),
+                                              withFont: FontLib.Text.regualr,
                                               color: .appColor(.blackFontColor))
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -41,7 +41,7 @@ class LoginCardViewController: CardViewController {
     
     private let passwordLabel: UILabel = {
         let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
-                                              withFont: .systemFont(ofSize: 18, weight: .semibold),
+                                              withFont: FontLib.Text.regualr,
                                               color: .appColor(.blackFontColor))
         label.translatesAutoresizingMaskIntoConstraints = false
         
