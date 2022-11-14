@@ -5,6 +5,8 @@ class CardViewController: UIViewController {
     private let presentDirection, dismissDirection: PresentationDirections
     private let presentDuration, dismissDuration: TimeInterval
     
+    var viewBottomConstraint: NSLayoutConstraint?
+    
     init(presentDirection: PresentationDirections,
          dismissDirection: PresentationDirections,
          presentDuration: TimeInterval,

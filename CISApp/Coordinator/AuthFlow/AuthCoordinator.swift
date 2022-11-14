@@ -29,7 +29,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
     }
     
     func toRegisterCard() {
-        let registerVC = LoginCardViewController(presentDirection: .left,
+        let registerVC = RegisterCardViewController(presentDirection: .left,
                                                  dismissDirection: .bottom,
                                                  presentDuration: 0.6,
                                                  dismissDuration: 0.6)

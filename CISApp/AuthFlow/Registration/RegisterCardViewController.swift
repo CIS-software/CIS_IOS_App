@@ -1,10 +1,12 @@
+import Foundation
 import UIKit
 
-class LoginCardViewController: CardViewController {
-
+class RegisterCardViewController: CardViewController {
+    
     var authCoordinator: AuthCoordinator?
     
-//MARK: - UI
+    //MARK: UI
+    
     private let backButton: UIButton  = {
         let button = UIButton()
         var arrowImage = UIImage(systemName: "arrow.backward")?.scaleImage(scaleFactor: 1.5)
@@ -14,7 +16,7 @@ class LoginCardViewController: CardViewController {
     }()
     
     private let titleLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.enter,
+        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.register,
                                               withFont: FontLib.Title.cardTitle,
                                               color: .appColor(.blackFontColor))
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -53,40 +55,32 @@ class LoginCardViewController: CardViewController {
         return textField
     }()
     
-    private let loginButton: StandartButton = {
-        let button = StandartButton(title: Localization.AuthFlow.enter)
+    private let nextStepButton: StandartButton = {
+        let button = StandartButton(title: Localization.AuthFlow.nextStep)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-// MARK: - ViewDidLoad
+    
+    //MARK: ViewDidload
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         view.backgroundColor = .appColor(.formBgColor)
+        super.viewDidLoad()
+        backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
-        }
-// MARK: - Binded functions
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            viewBottomConstraint?.constant -= keyboardSize.height
-        }
     }
-
-    @objc private func keyboardWillHide(notification: NSNotification) {
-            viewBottomConstraint?.constant = 0
-            updateViewConstraints()
-        }
     
+    //MARK: Binded functions
     @objc private func onBackButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
             self?.authCoordinator?.toMainCard()
         }
     }
-//MARK: - Constraints SubViews adding
-    private func addViews(){
+    
+    //MARK: - Constraints, SubViews adding
+    
+    private func addViews() {
         view.addSubviews([
             backButton,
             titleLabel,
@@ -94,12 +88,11 @@ class LoginCardViewController: CardViewController {
             emailField,
             passwordLabel,
             passwordField,
-            loginButton
+            nextStepButton,
         ])
-        makeConstraints()
     }
     
-    private func makeConstraints(){
+    private func makeConstraints() {
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         
@@ -120,10 +113,11 @@ class LoginCardViewController: CardViewController {
         passwordField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
         passwordField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25).isActive = true
         
-        loginButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 25).isActive = true
+        nextStepButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        nextStepButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 25).isActive = true
         
-        viewBottomConstraint = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
+        viewBottomConstraint = nextStepButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
         viewBottomConstraint?.isActive = true
     }
+    
 }

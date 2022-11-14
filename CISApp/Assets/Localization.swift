@@ -12,5 +12,6 @@ enum Localization {
         static let register = "Зарегестрироваться"
         static let email = "Почта"
         static let password = "Пароль"
+        static let nextStep = "Далее"
     }
 }

@@ -28,14 +28,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appColor(.bgColor)
-        addSubviews()
+        addViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    func addSubviews() {
+    func addViews() {
         view.addSubview(logoStackView)
         makeTitleViewConstraints()
     }

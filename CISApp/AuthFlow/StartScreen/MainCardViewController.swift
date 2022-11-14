@@ -30,10 +30,10 @@ class MainCardViewController: CardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appColor(.formBgColor)
-        addSubviews()
+        addViews()
     }
     
-    func addSubviews() {
+    func addViews() {
         view.addSubview(loginButton)
         view.addSubview(registerButton)
         
