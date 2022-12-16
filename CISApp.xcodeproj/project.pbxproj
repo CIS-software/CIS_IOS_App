@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,15 @@
 		FA036D44290AF77A0052F131 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D43290AF77A0052F131 /* TextField.swift */; };
 		FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */; };
 		FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D4B290BBE740052F131 /* UILabel+Extension.swift */; };
+		FA5A069A2934C5CC003B94A5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A06992934C5CC003B94A5 /* TableView.swift */; };
+		FA5A069C2934C67D003B94A5 /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */; };
+		FA5A069E2934C85F003B94A5 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */; };
 		FA86C1AB291FFF99002A1782 /* RegisterCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AA291FFF99002A1782 /* RegisterCardViewController.swift */; };
 		FA86C1AD29223A7E002A1782 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AC29223A7E002A1782 /* UIView + Extension.swift */; };
+		FA86C1AF2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AE2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift */; };
+		FA86C1B129224F1D002A1782 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */; };
+		FA8810DD2939F36800F609CE /* CellFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8810DC2939F36800F609CE /* CellFactoryProtocol.swift */; };
+		FA8810E6293D13A900F609CE /* BoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8810E5293D13A900F609CE /* BoundedButton.swift */; };
 		FAA6A94B290DC29F0068715F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */; };
 		FAA6A951290DD1030068715F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A950290DD1030068715F /* CardViewController.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
@@ -35,6 +42,11 @@
 		FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D01290584C400821A5A /* MainCardViewController.swift */; };
 		FADA5D042905878900821A5A /* StandartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D032905878900821A5A /* StandartButton.swift */; };
 		FADA5D062905BC8300821A5A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA5D052905BC8300821A5A /* Localization.swift */; };
+		FADF6190294B792E008A5186 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF618F294B792E008A5186 /* UIViewController + Extension.swift */; };
+		FADF6193294BBA6F008A5186 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF6192294BBA6F008A5186 /* Constants.swift */; };
+		FADF6195294BC9E0008A5186 /* EndpointTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF6194294BC9E0008A5186 /* EndpointTypeProtocol.swift */; };
+		FADF6197294C26BE008A5186 /* CISAppEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF6196294C26BE008A5186 /* CISAppEndPoint.swift */; };
+		FADF6199294C344E008A5186 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF6198294C344E008A5186 /* NetworkManager.swift */; };
 		FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */; };
 		FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */; };
 /* End PBXBuildFile section */
@@ -67,8 +79,15 @@
 		FA036D43290AF77A0052F131 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewControrller.swift; sourceTree = "<group>"; };
 		FA036D4B290BBE740052F131 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		FA5A06992934C5CC003B94A5 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
+		FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
 		FA86C1AA291FFF99002A1782 /* RegisterCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardViewController.swift; sourceTree = "<group>"; };
 		FA86C1AC29223A7E002A1782 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		FA86C1AE2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRegistrationCardViewController.swift; sourceTree = "<group>"; };
+		FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		FA8810DC2939F36800F609CE /* CellFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactoryProtocol.swift; sourceTree = "<group>"; };
+		FA8810E5293D13A900F609CE /* BoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedButton.swift; sourceTree = "<group>"; };
 		FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		FAA6A950290DD1030068715F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +108,11 @@
 		FADA5D01290584C400821A5A /* MainCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardViewController.swift; sourceTree = "<group>"; };
 		FADA5D032905878900821A5A /* StandartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartButton.swift; sourceTree = "<group>"; };
 		FADA5D052905BC8300821A5A /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		FADF618F294B792E008A5186 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		FADF6192294BBA6F008A5186 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FADF6194294BC9E0008A5186 /* EndpointTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTypeProtocol.swift; sourceTree = "<group>"; };
+		FADF6196294C26BE008A5186 /* CISAppEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISAppEndPoint.swift; sourceTree = "<group>"; };
+		FADF6198294C344E008A5186 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCardsCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,8 +200,13 @@
 			isa = PBXGroup;
 			children = (
 				FADA5D032905878900821A5A /* StandartButton.swift */,
+				FA8810E5293D13A900F609CE /* BoundedButton.swift */,
 				FA036D43290AF77A0052F131 /* TextField.swift */,
 				FAA6A950290DD1030068715F /* CardViewController.swift */,
+				FA5A06992934C5CC003B94A5 /* TableView.swift */,
+				FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */,
+				FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */,
+				FA8810DC2939F36800F609CE /* CellFactoryProtocol.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -185,12 +214,52 @@
 		FA036D49290BBE520052F131 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */,
 				FA036D4B290BBE740052F131 /* UILabel+Extension.swift */,
 				FA86C1AC29223A7E002A1782 /* UIView + Extension.swift */,
 				FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */,
-				FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */,
+				FADF618F294B792E008A5186 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA5A06982934C42D003B94A5 /* CitiesTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CitiesTableView;
+			sourceTree = "<group>";
+		};
+		FA8810DE293CFBCD00F609CE /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				FA8810E2293D0F4500F609CE /* ProfileFlow */,
+				FA8810E0293D0EF100F609CE /* ScheduleFlow */,
+				FA8810DF293CFBE200F609CE /* NewsFlow */,
+				FAC04B97290327E600B7F6BD /* AuthFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		FA8810DF293CFBE200F609CE /* NewsFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsFlow;
+			sourceTree = "<group>";
+		};
+		FA8810E0293D0EF100F609CE /* ScheduleFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScheduleFlow;
+			sourceTree = "<group>";
+		};
+		FA8810E2293D0F4500F609CE /* ProfileFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileFlow;
 			sourceTree = "<group>";
 		};
 		FAC04B58290327BA00B7F6BD = {
@@ -216,9 +285,10 @@
 		FAC04B63290327BA00B7F6BD /* CISApp */ = {
 			isa = PBXGroup;
 			children = (
+				FADF6191294BBA4A008A5186 /* NetworkManager */,
 				FA036D47290BBE290052F131 /* UI+Extensions */,
 				FA036D36290A8A240052F131 /* Coordinator */,
-				FAC04B97290327E600B7F6BD /* AuthFlow */,
+				FA8810DE293CFBCD00F609CE /* Flows */,
 				FAC04B9D2903285C00B7F6BD /* Assets */,
 				FAC04B9B2903283800B7F6BD /* App */,
 			);
@@ -256,7 +326,10 @@
 		FAC04B982903280900B7F6BD /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				FA5A06982934C42D003B94A5 /* CitiesTableView */,
 				FA86C1AA291FFF99002A1782 /* RegisterCardViewController.swift */,
+				FA86C1AE2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift */,
+				FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -308,6 +381,17 @@
 				FAC04BA32903332E00B7F6BD /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FADF6191294BBA4A008A5186 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FADF6192294BBA6F008A5186 /* Constants.swift */,
+				FADF6194294BC9E0008A5186 /* EndpointTypeProtocol.swift */,
+				FADF6196294C26BE008A5186 /* CISAppEndPoint.swift */,
+				FADF6198294C344E008A5186 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +474,7 @@
 				};
 			};
 			buildConfigurationList = FAC04B5C290327BA00B7F6BD /* Build configuration list for PBXProject "CISApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -440,28 +524,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADF6195294BC9E0008A5186 /* EndpointTypeProtocol.swift in Sources */,
 				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
+				FADF6193294BBA6F008A5186 /* Constants.swift in Sources */,
 				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
 				FA036D3B290A8A240052F131 /* Coordinator.swift in Sources */,
+				FA86C1AF2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift in Sources */,
 				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
 				FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */,
 				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
 				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
 				FA036D44290AF77A0052F131 /* TextField.swift in Sources */,
 				FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */,
+				FA86C1B129224F1D002A1782 /* RegistrationViewModel.swift in Sources */,
+				FA8810E6293D13A900F609CE /* BoundedButton.swift in Sources */,
 				FAA6A94B290DC29F0068715F /* UIImage+Extension.swift in Sources */,
 				FA86C1AB291FFF99002A1782 /* RegisterCardViewController.swift in Sources */,
 				FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */,
 				FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */,
+				FA8810DD2939F36800F609CE /* CellFactoryProtocol.swift in Sources */,
+				FADF6199294C344E008A5186 /* NetworkManager.swift in Sources */,
 				FA036D3A290A8A240052F131 /* AppCoordinator.swift in Sources */,
 				FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */,
+				FA5A069A2934C5CC003B94A5 /* TableView.swift in Sources */,
 				FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */,
+				FA5A069E2934C85F003B94A5 /* TableViewCellProtocol.swift in Sources */,
+				FADF6190294B792E008A5186 /* UIViewController + Extension.swift in Sources */,
 				FADA5D042905878900821A5A /* StandartButton.swift in Sources */,
 				FADA5D062905BC8300821A5A /* Localization.swift in Sources */,
 				FA86C1AD29223A7E002A1782 /* UIView + Extension.swift in Sources */,
 				FAA6A951290DD1030068715F /* CardViewController.swift in Sources */,
 				FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */,
+				FA5A069C2934C67D003B94A5 /* TableViewProtocol.swift in Sources */,
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
+				FADF6197294C26BE008A5186 /* CISAppEndPoint.swift in Sources */,
 				FADA5D02290584C400821A5A /* MainCardViewController.swift in Sources */,
 				FA036CE42909182B0052F131 /* PresentationController.swift in Sources */,
 				FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */,

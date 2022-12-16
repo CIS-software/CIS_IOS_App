@@ -2,8 +2,11 @@ import Foundation
 import UIKit
 
 class RegisterCardViewController: CardViewController {
+    typealias ViewModel = RegistrationViewModel
     
     var authCoordinator: AuthCoordinator?
+    
+    var viewModel: ViewModel?
     
     //MARK: UI
     
@@ -36,6 +39,7 @@ class RegisterCardViewController: CardViewController {
     private let emailField: TextField = {
         let textField = TextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -66,15 +70,25 @@ class RegisterCardViewController: CardViewController {
     override func viewDidLoad() {
         view.backgroundColor = .appColor(.formBgColor)
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+        moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
+        nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
     }
     
     //MARK: Binded functions
+    
     @objc private func onBackButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
             self?.authCoordinator?.toMainCard()
+        }
+    }
+    
+    @objc private func onNextButtonPressed() {
+        self.dismiss(animated: true) { [weak self] in
+            self?.authCoordinator?.toPersonalDataInput()
         }
     }
     

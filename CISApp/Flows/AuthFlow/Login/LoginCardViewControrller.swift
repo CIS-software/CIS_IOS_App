@@ -34,6 +34,7 @@ class LoginCardViewController: CardViewController {
     private let emailField: TextField = {
         let textField = TextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -62,24 +63,18 @@ class LoginCardViewController: CardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appColor(.formBgColor)
+        NetworkManager().loginUser(email: "0002@email.com", password: "0001") { id,acess,refresh,error in
+            print("\(id ?? 000), \n AcessToken: \(acess), \n rt: \(refresh )")
+            print(error ?? "Нет ошибки")
+        }
         addViews()
         makeConstraints()
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        hideKeyboardWhenTappedAround()
+        moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         }
-// MARK: - Binded functions
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            viewBottomConstraint?.constant -= keyboardSize.height
-        }
-    }
-
-    @objc private func keyboardWillHide(notification: NSNotification) {
-            viewBottomConstraint?.constant = 0
-            updateViewConstraints()
-        }
     
+    // MARK: - Binded functions
     @objc private func onBackButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
             self?.authCoordinator?.toMainCard()
