@@ -2,9 +2,11 @@ import UIKit
 
 class PersonalDataRegistrationCardViewController: CardViewController {
     
+    typealias ViewModel = RegistrationViewModel
+    
     var authCoordinator: AuthCardsCoordinatorProtocol?
     
-    var viewModel: RegistrationViewModel?
+    var viewModel: ViewModel?
     
     //MARK: UI
     
@@ -113,10 +115,12 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         moveContentWhenKeyboardShows()
+        bindEvents()
         cityTextField.inputView = cityPicker
         cityPicker.dataSource = self
         cityPicker.delegate = self
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
+        nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
     }
@@ -129,8 +133,53 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         }
     }
     
-    @objc private func onCityButtonPressed() {
+    @objc private func onNextButtonPressed() {
+        guard let name = firstNameField.text, !name.isEmpty,
+              let surname = lastNameField.text, !surname.isEmpty,
+              let town = cityTextField.text, !town.isEmpty else {
+            viewModel?.registrationStatus.value = .unsuccess(error: Localization.AuthFlow.notEnouthAuthData)
+            return
+        }
+        let birhday = getChoosenBirthday()
+        viewModel?.userData.name = name
+        viewModel?.userData.surname = surname
+        viewModel?.userData.town = town
+        viewModel?.userData.age = birhday
+        viewModel?.registrationStatus.value = .sucessAllDataEntered
+    }
+    
+    func getChoosenBirthday() -> String {
+        let dateFormatter = DateFormatter()
+        let birthday = birthDatePicker.date
+        dateFormatter.dateFormat = "YY/MM/dd"
         
+        return dateFormatter.string(from: birthday)
+    }
+    
+    func bindEvents() {
+        self.viewModel?.registrationStatus.bind(listener: {[weak self] state in
+            guard let state = state else {return}
+            self?.event(state: state)
+        })
+    }
+    
+    func event(state: ViewModel.RegistrationStatus) {
+        switch state {
+        case .sucessAllDataEntered:
+            viewModel?.registerUser()
+        case .unsuccess(error: let error):
+            let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true)
+        case .registrationSucess:
+            DispatchQueue.main.async {
+                self.dismiss(animated: true) {
+                    self.authCoordinator?.toLoginCard()
+                }
+            }
+        default:
+            return
+        }
     }
     
     //MARK: - Constraints, SubViews adding

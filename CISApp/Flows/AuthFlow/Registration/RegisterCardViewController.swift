@@ -71,20 +71,27 @@ class RegisterCardViewController: CardViewController {
         view.backgroundColor = .appColor(.formBgColor)
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        UserNetworkManager().createUser(name: "SASHA", surename: "PASHA", password: "1234", email: "nujniy7.vorobey@gmail.com", town: "salda", age: "123") { user, error in
-            guard let user = user else {
-                print("Нет юзера")
-                print(error ?? "Нет ошибки")
-                return
-                
-            }
-            print("\(user.id ?? 1234)")
-        }
+        bindEvents()
         moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
+    }
+    
+    func eventHandler(status: ViewModel.RegistrationStatus) {
+        switch status {
+        case .sucessEmailAndPasswordEntered:
+            self.dismiss(animated: true) { [weak self] in
+                self?.authCoordinator?.toPersonalDataInput()
+            }
+        case .unsuccess(let error):
+            let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true)
+        default:
+            return
+        }
     }
     
     //MARK: Binded functions
@@ -96,9 +103,22 @@ class RegisterCardViewController: CardViewController {
     }
     
     @objc private func onNextButtonPressed() {
-        self.dismiss(animated: true) { [weak self] in
-            self?.authCoordinator?.toPersonalDataInput()
+        guard let email = emailField.text, !email.isEmpty,
+              let password = passwordField.text, !password.isEmpty else {
+                  viewModel?.registrationStatus.value = .unsuccess(error: Localization.AuthFlow.notEnouthAuthData)
+                  return
         }
+        
+        viewModel?.userData.email = email
+        viewModel?.password = password
+        viewModel?.registrationStatus.value = .sucessEmailAndPasswordEntered
+    }
+    
+    func bindEvents() {
+        viewModel?.registrationStatus.bind(listener: {[weak self] status in
+            guard let status = status else { return }
+            self?.eventHandler(status: status)
+        })
     }
     
     //MARK: - Constraints, SubViews adding
