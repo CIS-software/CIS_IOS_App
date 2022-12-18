@@ -71,6 +71,15 @@ class RegisterCardViewController: CardViewController {
         view.backgroundColor = .appColor(.formBgColor)
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        UserNetworkManager().createUser(name: "SASHA", surename: "PASHA", password: "1234", email: "nujniy7.vorobey@gmail.com", town: "salda", age: "123") { user, error in
+            guard let user = user else {
+                print("Нет юзера")
+                print(error ?? "Нет ошибки")
+                return
+                
+            }
+            print("\(user.id ?? 1234)")
+        }
         moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)

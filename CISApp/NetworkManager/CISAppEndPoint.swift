@@ -5,7 +5,7 @@ public enum CISApi {
         case login(email: String, password: String)
         case updateTokens(refresh_token: String)
         case createUser(name: String, surename: String, password: String, email: String, town: String, age: String)
-        case user(id: Int)
+        case user(id: Int, acessToken: String)
     }
 }
 
@@ -23,7 +23,7 @@ extension CISApi.Users: EndpointTypeProtocol {
             return "update-tokens"
         case .createUser:
             return "create-user"
-        case .user(let id):
+        case .user(let id, _):
             return "user/\(id)"
         }
     }
@@ -57,6 +57,8 @@ extension CISApi.Users: EndpointTypeProtocol {
                                                        "Town": town,
                                                        "Age": age],
                                       urlParameters: nil)
+        case .user(_, let accessToken):
+            return .requestParametersAndHeaders(bodyParameters: nil, urlParameters: nil, additionHeaders: ["Authorization": "Bearer " + accessToken])
         default:
             return .request
         }
@@ -65,6 +67,4 @@ extension CISApi.Users: EndpointTypeProtocol {
     var headers: HTTPHeaders? {
         return nil
     }
-    
-    
 }

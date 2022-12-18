@@ -2,7 +2,7 @@ import UIKit
 
 class PersonalDataRegistrationCardViewController: CardViewController {
     
-    var authCoordinator: AuthCoordinator?
+    var authCoordinator: AuthCardsCoordinatorProtocol?
     
     var viewModel: RegistrationViewModel?
     
@@ -29,6 +29,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.firstName,
                                               withFont: FontLib.Text.regualr,
                                               color: .appColor(.blackFontColor))
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -37,6 +38,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     private let firstNameField: TextField = {
         let textField = TextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
         
         return textField
     }()
@@ -52,6 +54,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     
     private let lastNameField: TextField = {
         let textField = TextField()
+        textField.autocorrectionType = .no
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
@@ -66,9 +69,35 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         return label
     }()
     
+    private let cityTextField: TextField = {
+        let textField = TextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textField
+    }()
+    
     private let cityPicker: UIPickerView = {
         let cityPicker = UIPickerView()
         return cityPicker
+    }()
+    
+    private let birthdayLabel: UILabel = {
+        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.birthDay, withFont: FontLib.Text.regualr, color: .appColor(.blackFontColor))
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    
+    private let birthDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.datePickerMode = .date
+        datePicker.layer.backgroundColor = UIColor.appColor(.blackFontColor)?.cgColor
+        datePicker.layer.cornerRadius = 10
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        
+        return datePicker
     }()
     
     private let nextStepButton: StandartButton = {
@@ -84,6 +113,9 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         moveContentWhenKeyboardShows()
+        cityTextField.inputView = cityPicker
+        cityPicker.dataSource = self
+        cityPicker.delegate = self
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
@@ -112,6 +144,9 @@ class PersonalDataRegistrationCardViewController: CardViewController {
             lastNameLabel,
             lastNameField,
             cityLabel,
+            cityTextField,
+            birthdayLabel,
+            birthDatePicker,
             nextStepButton,
         ])
         makeConstraints()
@@ -141,8 +176,18 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         cityLabel.topAnchor.constraint(equalTo: lastNameField.bottomAnchor, constant: 25).isActive = true
         cityLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
         
+        cityTextField.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 10).isActive = true
+        cityTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
+        cityTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25).isActive = true
+        
+        birthdayLabel.topAnchor.constraint(equalTo: cityTextField.bottomAnchor, constant: 25).isActive = true
+        birthdayLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
+        
+        birthDatePicker.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 10).isActive = true
+        birthDatePicker.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
+        
         nextStepButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        nextStepButton.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 25).isActive = true
+        nextStepButton.topAnchor.constraint(equalTo: birthDatePicker.bottomAnchor, constant: 25).isActive = true
         
         viewBottomConstraint = nextStepButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
         viewBottomConstraint?.isActive = true
@@ -150,12 +195,21 @@ class PersonalDataRegistrationCardViewController: CardViewController {
 }
 
 
-//extension PersonalDataRegistrationCardViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        viewModel?.cities.count ?? 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
-//}
+extension PersonalDataRegistrationCardViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        viewModel?.cities.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel?.cities[row] ?? ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cityTextField.text = viewModel?.cities[row] ?? ""
+        cityTextField.resignFirstResponder()
+    }
+}

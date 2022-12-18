@@ -6,4 +6,6 @@ protocol AuthCardsCoordinatorProtocol {
     func toRegisterCard()
     
     func toMainCard()
+    
+    func toPersonalDataInput()
 }

@@ -4,7 +4,9 @@ class LoginCardViewController: CardViewController {
     
     typealias ViewModel = LoginCardViewModel
 
-    var authCoordinator: AuthCoordinator?
+    var authCoordinator: AuthCardsCoordinatorProtocol?
+    
+    var viewModel: ViewModel?
     
 //MARK: - UI
     private let backButton: UIButton  = {
@@ -66,16 +68,51 @@ class LoginCardViewController: CardViewController {
         super.viewDidLoad()
         view.backgroundColor = .appColor(.formBgColor)
         addViews()
+        bindData()
         makeConstraints()
         hideKeyboardWhenTappedAround()
         moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(onLoginButtonPressed), for: .touchUpInside)
         }
     
     // MARK: - Binded functions
     @objc private func onBackButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
             self?.authCoordinator?.toMainCard()
+        }
+    }
+    
+    @objc private func onLoginButtonPressed() {
+        viewModel?.updateCredentials(login: emailField.text ?? "", password: passwordField.text ?? "")
+        
+        switch viewModel?.creditionalsInput() {
+        case .correct:
+            viewModel?.loginUser()
+        case .incorrect:
+            return
+        case .none:
+            return
+        }
+    }
+    
+    func bindData() {
+        viewModel?.creditionalsInputErrorMessage.bind(listener: { [weak self] error in
+            let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
+            self?.present(alert, animated: true)
+        })
+        viewModel?.loginStatus.bind(listener: { [weak self] status in
+            self?.event(status: status)
+        })
+    }
+    
+    func event(status: ViewModel.LoginStatus) {
+        switch status {
+        case .success:
+            self.authCoordinator
+        case .unsuccess:
+            return
         }
     }
 //MARK: - Constraints SubViews adding

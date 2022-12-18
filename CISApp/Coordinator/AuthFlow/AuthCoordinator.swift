@@ -27,6 +27,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                   presentDuration: 0.4,
                                                   dismissDuration: 0.4)
         loginCardVC.authCoordinator = self
+        loginCardVC.viewModel = LoginCardViewModel(networkLoginManager: UserNetworkManager())
         navigationController.present(loginCardVC, animated: true)
     }
     
@@ -37,6 +38,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                  dismissDuration: 0.4)
         registerVC.authCoordinator = self
         registrationViewModel = RegistrationViewModel()
+        registrationViewModel?.userNetworkManager = UserNetworkManager()
         registerVC.viewModel = registrationViewModel
         navigationController.present(registerVC, animated: true)
     }
