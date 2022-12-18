@@ -17,6 +17,7 @@
 		FA036D44290AF77A0052F131 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D43290AF77A0052F131 /* TextField.swift */; };
 		FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */; };
 		FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D4B290BBE740052F131 /* UILabel+Extension.swift */; };
+		FA1B4C9A294C6927001FA14C /* LoginCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B4C99294C6927001FA14C /* LoginCardViewModel.swift */; };
 		FA5A069A2934C5CC003B94A5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A06992934C5CC003B94A5 /* TableView.swift */; };
 		FA5A069C2934C67D003B94A5 /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */; };
 		FA5A069E2934C85F003B94A5 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */; };
@@ -79,6 +80,7 @@
 		FA036D43290AF77A0052F131 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewControrller.swift; sourceTree = "<group>"; };
 		FA036D4B290BBE740052F131 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		FA1B4C99294C6927001FA14C /* LoginCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewModel.swift; sourceTree = "<group>"; };
 		FA5A06992934C5CC003B94A5 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
 		FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */,
+				FA1B4C99294C6927001FA14C /* LoginCardViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1B4C9A294C6927001FA14C /* LoginCardViewModel.swift in Sources */,
 				FADF6195294BC9E0008A5186 /* EndpointTypeProtocol.swift in Sources */,
 				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
 				FADF6193294BBA6F008A5186 /* Constants.swift in Sources */,

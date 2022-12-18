@@ -1,6 +1,8 @@
 import UIKit
 
 class LoginCardViewController: CardViewController {
+    
+    typealias ViewModel = LoginCardViewModel
 
     var authCoordinator: AuthCoordinator?
     
@@ -63,10 +65,6 @@ class LoginCardViewController: CardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appColor(.formBgColor)
-        NetworkManager().loginUser(email: "0002@email.com", password: "0001") { id,acess,refresh,error in
-            print("\(id ?? 000), \n AcessToken: \(acess), \n rt: \(refresh )")
-            print(error ?? "Нет ошибки")
-        }
         addViews()
         makeConstraints()
         hideKeyboardWhenTappedAround()

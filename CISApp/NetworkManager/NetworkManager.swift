@@ -57,5 +57,35 @@ struct NetworkManager {
             }
         }
     }
+    
+    func createUser(name: String, surename: String, password: String, email: String, town: String, age: String,
+                    completion: @escaping (_ user: User?,
+                                           _ error: String?) -> ()) {
+        router.request(.createUser(name: name, surename: surename, password: password, email: email, town: town, age: age)) { data, response, error in
+            if error != nil {
+                completion(nil, "CheckNetworkConnection")
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "CheckNetworkConnection")
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(User.self, from: responseData)
+                        guard let _ = apiResponse.id else { return }
+                        completion(User(name: apiResponse.name, surname: apiResponse.name, town: apiResponse.town, age: apiResponse.age, email: apiResponse.email, id: apiResponse.id, belt: apiResponse.belt, id_iko: apiResponse.id_iko), nil)
+                    }
+                    catch {
+                        completion(nil, NetworkResponse.unabletoDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
+            }
+        }
+    }
 }
 
