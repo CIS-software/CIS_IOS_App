@@ -172,9 +172,9 @@ class PersonalDataRegistrationCardViewController: CardViewController {
             alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true)
         case .registrationSucess:
-            DispatchQueue.main.async {
-                self.dismiss(animated: true) {
-                    self.authCoordinator?.toLoginCard()
+            DispatchQueue.main.async { [weak self] in
+                self?.dismiss(animated: true) {
+                    self?.authCoordinator?.toLoginCard()
                 }
             }
         default:

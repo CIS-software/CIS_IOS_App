@@ -69,7 +69,6 @@ class LoginCardViewController: CardViewController {
         view.backgroundColor = .appColor(.formBgColor)
         addViews()
         bindData()
-        makeConstraints()
         hideKeyboardWhenTappedAround()
         moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
@@ -110,7 +109,11 @@ class LoginCardViewController: CardViewController {
     func event(status: ViewModel.LoginStatus) {
         switch status {
         case .success:
-            self.authCoordinator
+            DispatchQueue.main.async { [weak self] in
+                self?.dismiss(animated: true) { [weak self] in
+                    self?.authCoordinator?.toMainFlow()
+                }
+            }
         case .unsuccess:
             return
         }

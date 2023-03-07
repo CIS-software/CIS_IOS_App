@@ -29,13 +29,15 @@ class LoginCardViewModel {
     func loginUser() {
         networkLoginManager.loginUser(email: login, password: password) {[weak self] id, acess, refresh, error in
             guard let error = error else {
+                UserDefaults.setValue(id, key: .userId)
+                UserDefaults.setValue(self?.login, key: .login)
+                UserDefaults.setValue(self?.password, key: .password)
                 UserDefaults.setValue(acess, key: .accessToken)
                 UserDefaults.setValue(refresh, key: .refreshToken)
+                self?.loginStatus.value = .success
                 return
             }
-            DispatchQueue.main.async {
                 self?.creditionalsInputErrorMessage.value = error
-            }
         }
     }
     

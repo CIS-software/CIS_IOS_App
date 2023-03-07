@@ -8,4 +8,6 @@ protocol AuthCardsCoordinatorProtocol {
     func toMainCard()
     
     func toPersonalDataInput()
+    
+    func toMainFlow()
 }

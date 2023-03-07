@@ -62,5 +62,12 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
         navigationController.viewControllers.last?.present(mainCardVC, animated: true)
     }
     
+    func toMainFlow() {
+        navigationController.viewControllers = []
+        let mainFlowCoordinator = MainAppCoordinator(navigationController: navigationController)
+        childCoordinators.append(mainFlowCoordinator)
+        mainFlowCoordinator.start()
+    }
+    
     
 }

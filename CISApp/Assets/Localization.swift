@@ -5,7 +5,7 @@ enum Localization {
     
     enum AuthFlow {
         static let enter = "Войти"
-        static let register = "Зарегестрироваться"
+        static let register = "Зарегистрироваться"
         static let email = "Почта"
         static let password = "Пароль"
         static let nextStep = "Далее"
@@ -19,4 +19,22 @@ enum Localization {
     }
     static let error = "Ошибка"
     static let ok = "ОК"
+    
+    enum UserProfileFlow {
+        static let title = "Профиль"
+        static let age = "Дата рождения"
+        static let belt = "Пояс"
+        static let city = "Город"
+        static let weight = "Вес"
+        static let getOut = "Выйти"
+        static let noData = "Не указано"
+    }
+    
+    enum ScheduleFlow {
+        static let title = "Расписание"
+    }
+    
+    enum News {
+        static let title = "Новости"
+    }
 }

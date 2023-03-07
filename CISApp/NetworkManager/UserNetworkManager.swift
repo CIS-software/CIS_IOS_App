@@ -74,9 +74,9 @@ struct UserNetworkManager {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode(User.self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode(UserRegisterData.self, from: responseData)
                         guard let _ = apiResponse.id else { return }
-                        completion(User(name: apiResponse.name, surname: apiResponse.name, town: apiResponse.town, age: apiResponse.age, email: apiResponse.email, id: apiResponse.id, belt: apiResponse.belt, id_iko: apiResponse.id_iko), nil)
+                        completion(User(name: apiResponse.name, surname: apiResponse.surname, town: apiResponse.town, age: apiResponse.age, email: apiResponse.email, id: apiResponse.id, belt: apiResponse.belt, id_iko: apiResponse.id_iko), nil)
                     }
                     catch {
                         completion(nil, NetworkResponse.unabletoDecode.rawValue)
@@ -104,7 +104,7 @@ struct UserNetworkManager {
                        do {
                            let apiResponse = try JSONDecoder().decode(User.self, from: responseData)
                            guard let _ = apiResponse.id else { return }
-                           completion(User(name: apiResponse.name, surname: apiResponse.name, town: apiResponse.town, age: apiResponse.age, email: apiResponse.email, id: apiResponse.id, belt: apiResponse.belt, id_iko: apiResponse.id_iko), nil)
+                           completion(User(name: apiResponse.name, surname: apiResponse.surname, town: apiResponse.town, age: apiResponse.age, id: apiResponse.id, belt: apiResponse.belt, id_iko: apiResponse.id_iko), nil)
                        }
                        catch {
                            completion(nil, NetworkResponse.unabletoDecode.rawValue)
