@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11610D76790E989B3BA70642 /* Pods_CISAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA2504A49C5FA22C07EA427 /* Pods_CISAppTests.framework */; };
-		2015585CD3543751E0FB9ABF /* Pods_CISApp_CISAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4F34BC3EE01C3D122EF273 /* Pods_CISApp_CISAppUITests.framework */; };
-		CCD09A5D225F41C80270BAE2 /* Pods_CISApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D777C3D718F3C0CC9ED2956B /* Pods_CISApp.framework */; };
 		FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CDD290917610052F131 /* PresentAnimation.swift */; };
 		FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE1290917B90052F131 /* DismissAnimation.swift */; };
 		FA036CE42909182B0052F131 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036CE32909182B0052F131 /* PresentationController.swift */; };
@@ -20,7 +17,12 @@
 		FA036D44290AF77A0052F131 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D43290AF77A0052F131 /* TextField.swift */; };
 		FA036D46290BBC6D0052F131 /* LoginCardViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */; };
 		FA036D4C290BBE740052F131 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA036D4B290BBE740052F131 /* UILabel+Extension.swift */; };
+		FA09F30329C9A79400AEEA77 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09F30229C9A79400AEEA77 /* ScheduleModel.swift */; };
+		FA09F30529C9A8EA00AEEA77 /* UserRegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09F30429C9A8EA00AEEA77 /* UserRegisterData.swift */; };
+		FA09F30729C9A92900AEEA77 /* UserApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09F30629C9A92900AEEA77 /* UserApiResponse.swift */; };
 		FA1B4C9A294C6927001FA14C /* LoginCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B4C99294C6927001FA14C /* LoginCardViewModel.swift */; };
+		FA445D5629C461D30000E47E /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA445D5529C461D30000E47E /* ScheduleTableViewController.swift */; };
+		FA445D5829C4F48C0000E47E /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA445D5729C4F48C0000E47E /* ScheduleViewModel.swift */; };
 		FA5A069A2934C5CC003B94A5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A06992934C5CC003B94A5 /* TableView.swift */; };
 		FA5A069C2934C67D003B94A5 /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */; };
 		FA5A069E2934C85F003B94A5 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */; };
@@ -31,7 +33,6 @@
 		FA65BE8A294FC8D4007F6FB5 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BE89294FC8D4007F6FB5 /* UserProfileViewModel.swift */; };
 		FA65BE8D294FC945007F6FB5 /* MainTabBarVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BE8C294FC945007F6FB5 /* MainTabBarVIewController.swift */; };
 		FA65BE90294FCFF8007F6FB5 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BE8F294FCFF8007F6FB5 /* MainFlowCoordinator.swift */; };
-		FA8550B2294F3EF9006B317E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA8550B1294F3EF9006B317E /* Podfile */; };
 		FA86C1AB291FFF99002A1782 /* RegisterCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AA291FFF99002A1782 /* RegisterCardViewController.swift */; };
 		FA86C1AD29223A7E002A1782 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AC29223A7E002A1782 /* UIView + Extension.swift */; };
 		FA86C1AF2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1AE2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift */; };
@@ -81,14 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5AA2504A49C5FA22C07EA427 /* Pods_CISAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CISAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78EFBC8336F2D34999264784 /* Pods-CISAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CISAppTests/Pods-CISAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		84684EB0AFE6309E286C8C02 /* Pods-CISApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISApp.debug.xcconfig"; path = "Target Support Files/Pods-CISApp/Pods-CISApp.debug.xcconfig"; sourceTree = "<group>"; };
-		9C10E7F201432E2E1222E20E /* Pods-CISApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISApp.release.xcconfig"; path = "Target Support Files/Pods-CISApp/Pods-CISApp.release.xcconfig"; sourceTree = "<group>"; };
-		9C3002D19F9740E6A194D9E5 /* Pods-CISApp-CISAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISApp-CISAppUITests.release.xcconfig"; path = "Target Support Files/Pods-CISApp-CISAppUITests/Pods-CISApp-CISAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BFEE76F4126DB2DA4758ABA7 /* Pods-CISAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISAppTests.release.xcconfig"; path = "Target Support Files/Pods-CISAppTests/Pods-CISAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		D777C3D718F3C0CC9ED2956B /* Pods_CISApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CISApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD4B87A95CEA93AEB446ED02 /* Pods-CISApp-CISAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CISApp-CISAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-CISApp-CISAppUITests/Pods-CISApp-CISAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA036CDD290917610052F131 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 		FA036CE1290917B90052F131 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		FA036CE32909182B0052F131 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -99,7 +92,12 @@
 		FA036D43290AF77A0052F131 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		FA036D45290BBC6D0052F131 /* LoginCardViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewControrller.swift; sourceTree = "<group>"; };
 		FA036D4B290BBE740052F131 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		FA09F30229C9A79400AEEA77 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		FA09F30429C9A8EA00AEEA77 /* UserRegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterData.swift; sourceTree = "<group>"; };
+		FA09F30629C9A92900AEEA77 /* UserApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiResponse.swift; sourceTree = "<group>"; };
 		FA1B4C99294C6927001FA14C /* LoginCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardViewModel.swift; sourceTree = "<group>"; };
+		FA445D5529C461D30000E47E /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		FA445D5729C4F48C0000E47E /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		FA5A06992934C5CC003B94A5 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		FA5A069B2934C67D003B94A5 /* TableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
 		FA5A069D2934C85F003B94A5 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		FA65BE89294FC8D4007F6FB5 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		FA65BE8C294FC945007F6FB5 /* MainTabBarVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVIewController.swift; sourceTree = "<group>"; };
 		FA65BE8F294FCFF8007F6FB5 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
-		FA8550B1294F3EF9006B317E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FA86C1AA291FFF99002A1782 /* RegisterCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardViewController.swift; sourceTree = "<group>"; };
 		FA86C1AC29223A7E002A1782 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		FA86C1AE2922449F002A1782 /* PersonalDataRegistrationCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRegistrationCardViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +141,6 @@
 		FADF6198294C344E008A5186 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
 		FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCardsCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
-		FF4F34BC3EE01C3D122EF273 /* Pods_CISApp_CISAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CISApp_CISAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD09A5D225F41C80270BAE2 /* Pods_CISApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11610D76790E989B3BA70642 /* Pods_CISAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,36 +162,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2015585CD3543751E0FB9ABF /* Pods_CISApp_CISAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31DCC7BCC2F5BFB9A59043C3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D777C3D718F3C0CC9ED2956B /* Pods_CISApp.framework */,
-				FF4F34BC3EE01C3D122EF273 /* Pods_CISApp_CISAppUITests.framework */,
-				5AA2504A49C5FA22C07EA427 /* Pods_CISAppTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		545070ED5CE18826310B0E69 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				84684EB0AFE6309E286C8C02 /* Pods-CISApp.debug.xcconfig */,
-				9C10E7F201432E2E1222E20E /* Pods-CISApp.release.xcconfig */,
-				DD4B87A95CEA93AEB446ED02 /* Pods-CISApp-CISAppUITests.debug.xcconfig */,
-				9C3002D19F9740E6A194D9E5 /* Pods-CISApp-CISAppUITests.release.xcconfig */,
-				78EFBC8336F2D34999264784 /* Pods-CISAppTests.debug.xcconfig */,
-				BFEE76F4126DB2DA4758ABA7 /* Pods-CISAppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FA036CDC290916E80052F131 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +282,9 @@
 		FA8810E0293D0EF100F609CE /* ScheduleFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FA445D5529C461D30000E47E /* ScheduleTableViewController.swift */,
+				FA445D5729C4F48C0000E47E /* ScheduleViewModel.swift */,
+				FA09F30229C9A79400AEEA77 /* ScheduleModel.swift */,
 			);
 			path = ScheduleFlow;
 			sourceTree = "<group>";
@@ -328,13 +301,10 @@
 		FAC04B58290327BA00B7F6BD = {
 			isa = PBXGroup;
 			children = (
-				FA8550B1294F3EF9006B317E /* Podfile */,
 				FAC04B63290327BA00B7F6BD /* CISApp */,
 				FAC04B7D290327BB00B7F6BD /* CISAppTests */,
 				FAC04B87290327BB00B7F6BD /* CISAppUITests */,
 				FAC04B62290327BA00B7F6BD /* Products */,
-				545070ED5CE18826310B0E69 /* Pods */,
-				31DCC7BCC2F5BFB9A59043C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -446,6 +416,8 @@
 			children = (
 				FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */,
 				FAC04BA32903332E00B7F6BD /* User.swift */,
+				FA09F30429C9A8EA00AEEA77 /* UserRegisterData.swift */,
+				FA09F30629C9A92900AEEA77 /* UserApiResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,11 +440,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC04B8E290327BB00B7F6BD /* Build configuration list for PBXNativeTarget "CISApp" */;
 			buildPhases = (
-				C02831E7150CCE7B3726C429 /* [CP] Check Pods Manifest.lock */,
 				FAC04B5D290327BA00B7F6BD /* Sources */,
 				FAC04B5E290327BA00B7F6BD /* Frameworks */,
 				FAC04B5F290327BA00B7F6BD /* Resources */,
-				843EC5B94136E43B0BCB9117 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -570,7 +540,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8550B2294F3EF9006B317E /* Podfile in Resources */,
 				FAC04B74290327BB00B7F6BD /* LaunchScreen.storyboard in Resources */,
 				FAC04B71290327BB00B7F6BD /* Assets.xcassets in Resources */,
 			);
@@ -632,45 +601,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CISApp-CISAppUITests/Pods-CISApp-CISAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		843EC5B94136E43B0BCB9117 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CISApp/Pods-CISApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CISApp/Pods-CISApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CISApp/Pods-CISApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C02831E7150CCE7B3726C429 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CISApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EB5A420B5DAAD29D70DC5F4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,6 +632,7 @@
 			files = (
 				FA1B4C9A294C6927001FA14C /* LoginCardViewModel.swift in Sources */,
 				FADF6195294BC9E0008A5186 /* EndpointTypeProtocol.swift in Sources */,
+				FA445D5829C4F48C0000E47E /* ScheduleViewModel.swift in Sources */,
 				FAC04BA129032E0D00B7F6BD /* FontLib.swift in Sources */,
 				FADF6193294BBA6F008A5186 /* Constants.swift in Sources */,
 				FAC04B69290327BA00B7F6BD /* MainViewController.swift in Sources */,
@@ -711,11 +642,15 @@
 				FA65BE80294F6533007F6FB5 /* UserDefaults + Extension.swift in Sources */,
 				FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */,
 				FA65BE7E294F5B53007F6FB5 /* UserCreditionals.swift in Sources */,
+				FA09F30329C9A79400AEEA77 /* ScheduleModel.swift in Sources */,
 				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
+				FA445D5629C461D30000E47E /* ScheduleTableViewController.swift in Sources */,
 				FAC04BA42903332E00B7F6BD /* User.swift in Sources */,
+				FA09F30729C9A92900AEEA77 /* UserApiResponse.swift in Sources */,
 				FA036D44290AF77A0052F131 /* TextField.swift in Sources */,
 				FA036D3E290A8B650052F131 /* AuthCoordinator.swift in Sources */,
 				FA86C1B129224F1D002A1782 /* RegistrationViewModel.swift in Sources */,
+				FA09F30529C9A8EA00AEEA77 /* UserRegisterData.swift in Sources */,
 				FA8810E6293D13A900F609CE /* BoundedButton.swift in Sources */,
 				FAA6A94B290DC29F0068715F /* UIImage+Extension.swift in Sources */,
 				FA65BE8A294FC8D4007F6FB5 /* UserProfileViewModel.swift in Sources */,
@@ -908,14 +843,15 @@
 		};
 		FAC04B8F290327BB00B7F6BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84684EB0AFE6309E286C8C02 /* Pods-CISApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2A8FN782JR;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CISApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -927,6 +863,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = AlexWonder.CISApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -937,14 +874,15 @@
 		};
 		FAC04B90290327BB00B7F6BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C10E7F201432E2E1222E20E /* Pods-CISApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2A8FN782JR;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CISApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -956,6 +894,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = AlexWonder.CISApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -966,7 +905,6 @@
 		};
 		FAC04B92290327BB00B7F6BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78EFBC8336F2D34999264784 /* Pods-CISAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -987,7 +925,6 @@
 		};
 		FAC04B93290327BB00B7F6BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFEE76F4126DB2DA4758ABA7 /* Pods-CISAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1008,7 +945,6 @@
 		};
 		FAC04B95290327BB00B7F6BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD4B87A95CEA93AEB446ED02 /* Pods-CISApp-CISAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1027,7 +963,6 @@
 		};
 		FAC04B96290327BB00B7F6BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C3002D19F9740E6A194D9E5 /* Pods-CISApp-CISAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

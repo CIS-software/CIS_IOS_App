@@ -1,6 +1,4 @@
-import Foundation
-
-public struct User {
+public struct UserRegisterData {
     var name: String? = nil
     var surname: String? = nil
     var town: String? = nil
@@ -12,7 +10,7 @@ public struct User {
     var id_iko: String? = nil
 }
 
-extension User: Decodable {
+extension UserRegisterData: Decodable {
     enum UserCodingKeys: String, CodingKey {
         case name
         case surname
@@ -27,13 +25,12 @@ extension User: Decodable {
     }
     public init(from decoder: Decoder) throws {
         let userContainer = try decoder.container(keyedBy: UserCodingKeys.self)
-        
         name = try userContainer.decode(String.self, forKey: .name)
         surname = try userContainer.decode(String.self, forKey: .surname)
         town = try userContainer.decode(String.self, forKey: .town)
         age = try userContainer.decode(String.self, forKey: .age)
-//        email = try userContainer.decode(String.self, forKey: .email)
-        id = try userContainer.decode(Int.self, forKey: .userId)
+        email = try userContainer.decode(String.self, forKey: .email)
+        id = try userContainer.decode(Int.self, forKey: .id)
         belt = try userContainer.decode(String.self, forKey: .belt)
         weight = try userContainer.decode(Int.self, forKey: .weight)
         id_iko = try userContainer.decode(String.self, forKey: .id_iko)
