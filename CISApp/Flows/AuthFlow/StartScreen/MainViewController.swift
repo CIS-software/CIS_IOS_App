@@ -31,10 +31,6 @@ class MainViewController: UIViewController {
         addViews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     func addViews() {
         view.addSubview(logoStackView)
         makeTitleViewConstraints()

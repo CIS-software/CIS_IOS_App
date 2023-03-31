@@ -73,7 +73,7 @@ class LoginCardViewController: CardViewController {
         moveContentWhenKeyboardShows()
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(onLoginButtonPressed), for: .touchUpInside)
-        }
+    }
     
     // MARK: - Binded functions
     @objc private func onBackButtonPressed() {
@@ -96,11 +96,11 @@ class LoginCardViewController: CardViewController {
     }
     
     func bindData() {
-        viewModel?.creditionalsInputErrorMessage.bind(listener: { [weak self] error in
+        viewModel?.creditionalsInputErrorMessage.bind( listener: { [weak self] error in
             let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
             self?.present(alert, animated: true)
-        })
+        } )
         viewModel?.loginStatus.bind(listener: { [weak self] status in
             self?.event(status: status)
         })

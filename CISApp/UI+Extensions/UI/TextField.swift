@@ -15,11 +15,12 @@ class TextField: UITextField {
     }
     
     private func setup() {
-        self.layer.cornerRadius = 5
-        self.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        self.textColor = UIColor.appColor(.blackFontColor)
+        layer.cornerRadius = 5
+        font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        textColor = UIColor.appColor(.blackFontColor)
         borderStyle = .none
-        self.backgroundColor = .white
+        backgroundColor = .white
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {

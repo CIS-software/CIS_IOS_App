@@ -16,6 +16,6 @@ class Observable<T> {
     
     func bind(listener: Listener?) {
         self.listener = listener
-        listener?(value)
+//        listener?(value)
     }
 }

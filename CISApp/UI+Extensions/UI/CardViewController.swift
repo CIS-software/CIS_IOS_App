@@ -59,7 +59,7 @@ extension CardViewController {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        viewBottomConstraint?.constant = 0
+        viewBottomConstraint?.constant = -15
         keyboardIsShown = false
         updateViewConstraints()
     }

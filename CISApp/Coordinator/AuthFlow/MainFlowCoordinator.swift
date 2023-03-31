@@ -29,7 +29,4 @@ class MainAppCoordinator: Coordinator {
         childCoordinators.append(authCoordinator)
         authCoordinator.start()
     }
-    
-
-    
 }

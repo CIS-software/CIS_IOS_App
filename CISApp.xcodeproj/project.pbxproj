@@ -171,7 +171,6 @@
 		FA036CDC290916E80052F131 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA036D40290A92210052F131 /* PresentationController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +226,7 @@
 		FA036D48290BBE400052F131 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA036D40290A92210052F131 /* PresentationController */,
 				FADA5D032905878900821A5A /* StandartButton.swift */,
 				FA8810E5293D13A900F609CE /* BoundedButton.swift */,
 				FA036D43290AF77A0052F131 /* TextField.swift */,

@@ -3,6 +3,7 @@ import UIKit
 
 class AuthCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
+    lazy var mainVC = MainViewController()
     
     var navigationController: UINavigationController
     
@@ -13,9 +14,8 @@ class AuthCoordinator: Coordinator {
     }
     
     func start() {
-        let mainViewController = MainViewController()
-        mainViewController.authCoordinator = self
-        navigationController.pushViewController(mainViewController, animated: false)
+        mainVC.authCoordinator = self
+        navigationController.pushViewController(mainVC, animated: false)
         toMainCard()
     }
 }
@@ -28,7 +28,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                   dismissDuration: 0.4)
         loginCardVC.authCoordinator = self
         loginCardVC.viewModel = LoginCardViewModel(networkLoginManager: UserNetworkManager())
-        navigationController.present(loginCardVC, animated: true)
+        mainVC.present(loginCardVC, animated: true)
     }
     
     func toRegisterCard() {
@@ -59,7 +59,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                 presentDuration: 0.4,
                                                 dismissDuration: 0.4)
         mainCardVC.authCoordinator = self
-        navigationController.viewControllers.last?.present(mainCardVC, animated: true)
+        navigationController.present(mainCardVC, animated: true)
     }
     
     func toMainFlow() {

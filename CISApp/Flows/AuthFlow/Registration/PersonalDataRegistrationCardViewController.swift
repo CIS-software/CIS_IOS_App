@@ -45,51 +45,28 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         return textField
     }()
     
-    private let lastNameLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.lastName,
-                                              withFont: FontLib.Text.regualr,
-                                              color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
+    private let lastNameLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.lastName,
+                                                          withFont: FontLib.Text.regualr,
+                                                          color: .appColor(.blackFontColor))
     
     private let lastNameField: TextField = {
         let textField = TextField()
         textField.autocorrectionType = .no
-        textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
     }()
     
-    private let cityLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.сityToTrain,
-                                              withFont: FontLib.Text.regualr,
-                                              color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
+    private let cityLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.сityToTrain,
+                                                      withFont: FontLib.Text.regualr,
+                                                      color: .appColor(.blackFontColor))
     
-    private let cityTextField: TextField = {
-        let textField = TextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        
-        return textField
-    }()
+    private let cityTextField: TextField = TextField()
     
-    private let cityPicker: UIPickerView = {
-        let cityPicker = UIPickerView()
-        return cityPicker
-    }()
+    private let cityPicker = UIPickerView()
     
-    private let birthdayLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.birthDay, withFont: FontLib.Text.regualr, color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
+    private let birthdayLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.birthDay,
+                                                          withFont: FontLib.Text.regualr,
+                                                          color: .appColor(.blackFontColor))
     
     private let birthDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -108,6 +85,12 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         return button
     }()
     
+    private func configureCityPicker() {
+        cityTextField.inputView = cityPicker
+        cityPicker.dataSource = self
+        cityPicker.delegate = self
+    }
+    
     //MARK: ViewDidload
     
     override func viewDidLoad() {
@@ -116,9 +99,6 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         hideKeyboardWhenTappedAround()
         moveContentWhenKeyboardShows()
         bindEvents()
-        cityTextField.inputView = cityPicker
-        cityPicker.dataSource = self
-        cityPicker.delegate = self
         backButton.addTarget(self, action: #selector(onBackButtonPressed), for: .touchUpInside)
         nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)
         addViews()
@@ -244,6 +224,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
 }
 
 
+//MARK: - UIPickerViewDataSource, UIPickerViewDelegate
 extension PersonalDataRegistrationCardViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

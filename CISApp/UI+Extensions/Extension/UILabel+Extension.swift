@@ -7,6 +7,7 @@ extension UILabel {
         label.font = font
         label.text = text
         label.textColor = color
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }

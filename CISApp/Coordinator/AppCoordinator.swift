@@ -36,9 +36,18 @@ class AppCoordinator: Coordinator {
                     return
                 }
                 DispatchQueue.main.async { [weak self] in
-                    let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
-                    self?.navigationController.present(alert, animated: true)
+                    guard let self = self else { return }
+//                    let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
+//
+                    let authCoordinator = AuthCoordinator(navigationController: self.navigationController)
+                    
+                    self.childCoordinators.append(authCoordinator)
+                    authCoordinator.start()
+                    
+//                    let window = UIApplication.shared.keyWindow
+//                    let rootViewController = window?.rootViewController
+//                    rootViewController?.present(alert, animated: true, completion: nil)
                 }
 
             }
