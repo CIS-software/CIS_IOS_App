@@ -8,64 +8,36 @@ class RegisterCardViewController: CardViewController {
     
     var viewModel: ViewModel?
     
-    //MARK: UI
+    //MARK: - UI
     
-    private let backButton: UIButton  = {
-        let button = UIButton()
-        var arrowImage = UIImage(systemName: "arrow.backward")?.scaleImage(scaleFactor: 1.5)
-        button.setImage(arrowImage, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    private let backButton = UIButton.makeBackArrowButton()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.register,
+    private let titleLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.register,
                                               withFont: FontLib.Title.cardTitle,
                                               color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
     
-    private let emailLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
+    private let emailLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
                                               withFont: FontLib.Text.regualr,
                                               color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
     
     private let emailField: TextField = {
         let textField = TextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.autocorrectionType = .no
         return textField
     }()
     
-    private let passwordLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
+    private let passwordLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
                                               withFont: FontLib.Text.regualr,
                                               color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
     private let passwordField: TextField = {
         let textField = TextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         return textField
     }()
     
-    private let nextStepButton: StandartButton = {
-        let button = StandartButton(title: Localization.AuthFlow.nextStep)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    private let nextStepButton = StandartButton(title: Localization.AuthFlow.nextStep)
     
-    //MARK: ViewDidload
+    //MARK: - ViewDidload
     
     override func viewDidLoad() {
         view.backgroundColor = .appColor(.formBgColor)
@@ -94,7 +66,7 @@ class RegisterCardViewController: CardViewController {
         }
     }
     
-    //MARK: Binded functions
+    //MARK: - Binded functions
     
     @objc private func onBackButtonPressed() {
         self.dismiss(animated: true) { [weak self] in

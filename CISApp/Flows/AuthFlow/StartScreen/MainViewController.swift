@@ -4,6 +4,8 @@ class MainViewController: UIViewController {
     
     var authCoordinator: AuthCoordinator?
     
+    //MARK: - UI
+    
     private let logoStackView: UIStackView = {
         let stackView = UIStackView()
         
@@ -24,7 +26,8 @@ class MainViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-
+    
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appColor(.bgColor)

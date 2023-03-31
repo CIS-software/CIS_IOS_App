@@ -3,67 +3,40 @@ import UIKit
 class LoginCardViewController: CardViewController {
     
     typealias ViewModel = LoginCardViewModel
-
+    
     var authCoordinator: AuthCardsCoordinatorProtocol?
     
     var viewModel: ViewModel?
     
-//MARK: - UI
-    private let backButton: UIButton  = {
-        let button = UIButton()
-        var arrowImage = UIImage(systemName: "arrow.backward")?.scaleImage(scaleFactor: 1.5)
-        button.setImage(arrowImage, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    //MARK: - UI
+    private let backButton = UIButton.makeBackArrowButton()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.enter,
-                                              withFont: FontLib.Title.cardTitle,
-                                              color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
+    private let titleLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.enter,
+                                                       withFont: FontLib.Title.cardTitle,
+                                                       color: .appColor(.blackFontColor))
     
-    private let emailLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
-                                              withFont: FontLib.Text.regualr,
-                                              color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
     
+    private let emailLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
+                                                       withFont: FontLib.Text.regualr,
+                                                       color: .appColor(.blackFontColor))
     private let emailField: TextField = {
         let textField = TextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.autocorrectionType = .no
         return textField
     }()
     
-    private let passwordLabel: UILabel = {
-        let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
-                                              withFont: FontLib.Text.regualr,
-                                              color: .appColor(.blackFontColor))
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
+    private let passwordLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
+                                                          withFont: FontLib.Text.regualr,
+                                                          color: .appColor(.blackFontColor))
     
     private let passwordField: TextField = {
         let textField = TextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         return textField
     }()
     
-    private let loginButton: StandartButton = {
-        let button = StandartButton(title: Localization.AuthFlow.enter)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-// MARK: - ViewDidLoad
+    private let loginButton = StandartButton(title: Localization.AuthFlow.enter)
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appColor(.formBgColor)
@@ -97,13 +70,15 @@ class LoginCardViewController: CardViewController {
     
     func bindData() {
         viewModel?.creditionalsInputErrorMessage.bind( listener: { [weak self] error in
-            let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
-            self?.present(alert, animated: true)
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: Localization.error, message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: Localization.ok, style: UIAlertAction.Style.default, handler: nil))
+                self?.present(alert, animated: true)
+            }
         } )
-        viewModel?.loginStatus.bind(listener: { [weak self] status in
+        viewModel?.loginStatus.bind( listener: { [weak self] status in
             self?.event(status: status)
-        })
+        } )
     }
     
     func event(status: ViewModel.LoginStatus) {
@@ -118,7 +93,7 @@ class LoginCardViewController: CardViewController {
             return
         }
     }
-//MARK: - Constraints SubViews adding
+    //MARK: - Constraints SubViews adding
     private func addViews(){
         view.addSubviews([
             backButton,

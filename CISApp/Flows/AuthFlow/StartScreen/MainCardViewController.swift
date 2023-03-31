@@ -4,6 +4,8 @@ import UIKit
 class MainCardViewController: CardViewController {
     var authCoordinator: AuthCoordinator?
     
+    //MARK: - UI
+    
     var loginButton: UIButton = {
         let button = StandartButton(title: Localization.AuthFlow.enter)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -15,7 +17,7 @@ class MainCardViewController: CardViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+    // MARK: - Binded functions
     @objc func loginButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
             self?.authCoordinator?.toLoginCard()
@@ -26,12 +28,15 @@ class MainCardViewController: CardViewController {
             self?.authCoordinator?.toRegisterCard()
         }
     }
+    //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appColor(.formBgColor)
         addViews()
     }
+    
+    //MARK: - Constraints, SubViews adding
     
     func addViews() {
         view.addSubview(loginButton)

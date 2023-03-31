@@ -24,6 +24,7 @@ class LoginCardViewModel {
     func updateCredentials(login: String, password: String) {
         creditionals.login = login
         creditionals.password = password
+        print(creditionals.login, creditionals.password)
     }
     
     func loginUser() {
@@ -37,7 +38,8 @@ class LoginCardViewModel {
                 self?.loginStatus.value = .success
                 return
             }
-                self?.creditionalsInputErrorMessage.value = error
+            print(error)
+            self?.creditionalsInputErrorMessage.value = error
         }
     }
     
