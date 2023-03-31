@@ -4,4 +4,4 @@
 
 <img src=Screen1.png height=400><img src=Screen2.png height=400>
 <br>
-<img src=Record.gif height=400>
+<img src=Record.gif>
