@@ -40,6 +40,7 @@ final class StandartButton: UIButton {
         addTarget(self, action: #selector(onTouchDown), for: .touchDown)
         addTarget(self, action: #selector(onTouchUp), for: .touchUpInside)
         addTarget(self, action: #selector(onTouchUp), for: .touchUpOutside)
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
 }

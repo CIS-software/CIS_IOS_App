@@ -1,41 +1,49 @@
 import Foundation
 import UIKit
 
-class MainCardViewController: UIViewController {
-    typealias VoidHandler = ()->Void
+class MainCardViewController: CardViewController {
+    var authCoordinator: AuthCoordinator?
     
-    var toLoginCard: VoidHandler?
-    var toRegisterCard: VoidHandler?
+    //MARK: - UI
     
     var loginButton: UIButton = {
-        let button = StandartButton(title: "Войти")
+        let button = StandartButton(title: Localization.AuthFlow.enter)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     var registerButton: UIButton = {
-        let button = StandartButton(title: "Зарегестрироваться")
+        let button = StandartButton(title: Localization.AuthFlow.register)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    @objc func dismissController() {
+    // MARK: - Binded functions
+    @objc func loginButtonPressed() {
         self.dismiss(animated: true) { [weak self] in
-            self?.toLoginCard?()
+            self?.authCoordinator?.toLoginCard()
         }
     }
+    @objc func registerButtonPressed() {
+        self.dismiss(animated: true) { [weak self] in
+            self?.authCoordinator?.toRegisterCard()
+        }
+    }
+    //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appColor(.formBgColor)
-        addSubviews()
+        addViews()
     }
     
-    func addSubviews() {
+    //MARK: - Constraints, SubViews adding
+    
+    func addViews() {
         view.addSubview(loginButton)
         view.addSubview(registerButton)
         
-        registerButton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         makeButtonsConstraints()
     }
     
