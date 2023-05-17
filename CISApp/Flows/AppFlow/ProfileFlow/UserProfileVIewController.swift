@@ -5,27 +5,19 @@ class UserProfileViewController: UIViewController {
     
     public var viewModel: ViewModel?
     
-    public var coordinator: MainAppCoordinator?
+    public var coordinator: MainFlowCoordinator?
     
     override func viewDidLoad() {
+        print(navigationController?.navigationBar.bounds.size.width ?? 0)
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = Localization.UserProfileFlow.title
         bindEvents()
         layoutSubviews()
         MakeConstraints()
+        title = Localization.UserProfileFlow.title
         viewModel?.state.value = .initial
         exitButton.addTarget(self, action: #selector(onExitButtonTapped), for: .touchUpInside)
     }
-    
-    private let titleLabel: UILabel = {
-        let titleLabel = UILabel.makeStandartLabel(text: Localization.UserProfileFlow.title,
-                                                   withFont: FontLib.Title.cardTitle,
-                                                   color: .appColor(.blackFontColor))
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        return titleLabel
-    }()
     
     private let userNameLabel: UILabel = {
         let label = UILabel.makeStandartLabel(text: "",
@@ -115,7 +107,6 @@ class UserProfileViewController: UIViewController {
     
     private func layoutSubviews() {
         view.addSubviews([userNameLabel,
-                          titleLabel,
                           ageNoteLabel,
                           ageLabel,
                           cityNoteLabel,
@@ -167,10 +158,7 @@ class UserProfileViewController: UIViewController {
     }
     
     private func MakeConstraints() {
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        userNameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25).isActive = true
+        userNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         userNameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
         ageNoteLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 25).isActive = true

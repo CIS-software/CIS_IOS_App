@@ -1,32 +1,80 @@
 import UIKit
 
-class MainAppCoordinator: Coordinator {
+class MainFlowCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
+    
+    var window: UIWindow
+    
     var childCoordinators = [Coordinator]()
+    var userProfileNavigationController = UINavigationController()
     
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController){
-        self.navigationController = navigationController
+    init(window: UIWindow){
+        self.window = window
     }
     
     func start() {
+
+        if let email = UserDefaults.getStrValue(forKey: .login),
+           let password = UserDefaults.getStrValue(forKey: .password) {
+            tryAuth(email: email, password: password) {[weak self] success in
+                if success {
+                    DispatchQueue.main.async {
+                        self?.showMainTabBar()
+                    }
+                }
+                else {
+                    DispatchQueue.main.async {
+                        self?.toLoginScreen()
+                    }
+                }
+            }
+        }
+    }
+    
+    func showMainTabBar() {
         let mainFlowTabBarController = MainTabBarViewController()
+        mainFlowTabBarController.viewControllers = [self.userProfileNavigationController]
+        self.userProfileNavigationController.tabBarItem.image = UIImage(systemName: "person.fill")
+        self.userProfileNavigationController.tabBarItem.title = Localization.UserProfileFlow.title
+        self.window.rootViewController = mainFlowTabBarController
+        self.window.makeKeyAndVisible()
+        self.showUserScreen()
+    }
+    
+    func showUserScreen() {
         let userProfileVC = UserProfileViewController()
+        
         userProfileVC.coordinator = self
+
         userProfileVC.viewModel = UserProfileViewModel(networkManager: UserNetworkManager())
         
-        userProfileVC.tabBarItem.image = UIImage(systemName: "person.fill")
-        userProfileVC.tabBarItem.title = Localization.UserProfileFlow.title
+//        let scheduleVC = ScheduleTableViewController()
         
-        mainFlowTabBarController.viewControllers = [userProfileVC]
-        navigationController.pushViewController(mainFlowTabBarController, animated: true)
+        userProfileNavigationController.pushViewController(userProfileVC, animated: true)
     }
     
     func toLoginScreen() {
-        navigationController.viewControllers = []
-        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        let authCoordinator = AuthCoordinator(window: window)
         childCoordinators.append(authCoordinator)
         authCoordinator.start()
+    }
+}
+
+extension MainFlowCoordinator {
+    func tryAuth(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        UserNetworkManager().loginUser(email: email, password: password) { id, acess, refresh, error in
+            if let _ = error {
+                completion(false)
+                return
+            }
+            else {
+                UserDefaults.setValue(id, key: .userId)
+                UserDefaults.setValue(acess, key: .accessToken)
+                UserDefaults.setValue(refresh, key: .refreshToken)
+                
+                completion(true)
+                return
+            }
+        }
     }
 }

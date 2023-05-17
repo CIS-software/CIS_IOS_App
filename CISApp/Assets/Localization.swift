@@ -37,4 +37,8 @@ enum Localization {
     enum News {
         static let title = "Новости"
     }
+    
+    enum NetworkActions {
+        static let noNetworkError = "Ошибка, проверьте соединение с интернетом"
+    }
 }
