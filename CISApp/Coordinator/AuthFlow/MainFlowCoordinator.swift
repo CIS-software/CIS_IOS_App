@@ -36,6 +36,18 @@ class MainFlowCoordinator: Coordinator {
         mainFlowTabBarController.viewControllers = [self.userProfileNavigationController]
         self.userProfileNavigationController.tabBarItem.image = UIImage(systemName: "person.fill")
         self.userProfileNavigationController.tabBarItem.title = Localization.UserProfileFlow.title
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.appColor(.bgColor)
+            userProfileNavigationController.navigationBar.standardAppearance = appearance
+            userProfileNavigationController.navigationBar.scrollEdgeAppearance = appearance
+        }
+        else {
+            userProfileNavigationController.navigationBar.barTintColor = UIColor.appColor(.bgColor)
+        }
+
         self.window.rootViewController = mainFlowTabBarController
         self.window.makeKeyAndVisible()
         self.showUserScreen()
@@ -45,10 +57,8 @@ class MainFlowCoordinator: Coordinator {
         let userProfileVC = UserProfileViewController()
         
         userProfileVC.coordinator = self
-
-        userProfileVC.viewModel = UserProfileViewModel(networkManager: UserNetworkManager())
         
-//        let scheduleVC = ScheduleTableViewController()
+        userProfileVC.viewModel = UserProfileViewModel(networkManager: UserNetworkManager())
         
         userProfileNavigationController.pushViewController(userProfileVC, animated: true)
     }

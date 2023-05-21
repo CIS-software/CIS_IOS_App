@@ -8,15 +8,17 @@ class UserProfileViewController: UIViewController {
     public var coordinator: MainFlowCoordinator?
     
     override func viewDidLoad() {
-        print(navigationController?.navigationBar.bounds.size.width ?? 0)
         super.viewDidLoad()
-        view.backgroundColor = .white
-        bindEvents()
         layoutSubviews()
         MakeConstraints()
+        
+        bindEvents()
+        
         title = Localization.UserProfileFlow.title
+
         viewModel?.state.value = .initial
         exitButton.addTarget(self, action: #selector(onExitButtonTapped), for: .touchUpInside)
+        view.backgroundColor = UIColor.appColor(.formBgColor)
     }
     
     private let userNameLabel: UILabel = {
