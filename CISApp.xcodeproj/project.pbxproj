@@ -39,6 +39,7 @@
 		FA86C1B129224F1D002A1782 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */; };
 		FA8810DD2939F36800F609CE /* CellFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8810DC2939F36800F609CE /* CellFactoryProtocol.swift */; };
 		FA8810E6293D13A900F609CE /* BoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8810E5293D13A900F609CE /* BoundedButton.swift */; };
+		FA88A8562A1A650200A74488 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A8552A1A650200A74488 /* LoadingViewController.swift */; };
 		FAA6A94B290DC29F0068715F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */; };
 		FAA6A951290DD1030068715F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A950290DD1030068715F /* CardViewController.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
@@ -115,6 +116,7 @@
 		FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		FA8810DC2939F36800F609CE /* CellFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactoryProtocol.swift; sourceTree = "<group>"; };
 		FA8810E5293D13A900F609CE /* BoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedButton.swift; sourceTree = "<group>"; };
+		FA88A8552A1A650200A74488 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		FAA6A950290DD1030068715F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +273,7 @@
 			children = (
 				FA65BE8B294FC910007F6FB5 /* AppFlow */,
 				FAC04B97290327E600B7F6BD /* AuthFlow */,
+				FA88A8552A1A650200A74488 /* LoadingViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				FADDB1C729D7234800EEF445 /* UIButton + extension.swift in Sources */,
 				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
 				FA65BE80294F6533007F6FB5 /* UserDefaults + Extension.swift in Sources */,
+				FA88A8562A1A650200A74488 /* LoadingViewController.swift in Sources */,
 				FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */,
 				FA65BE7E294F5B53007F6FB5 /* UserCreditionals.swift in Sources */,
 				FA09F30329C9A79400AEEA77 /* ScheduleModel.swift in Sources */,

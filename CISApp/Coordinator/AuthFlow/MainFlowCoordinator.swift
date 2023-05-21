@@ -7,23 +7,34 @@ class MainFlowCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var userProfileNavigationController = UINavigationController()
+    var loadingViewController: LoadingViewController?
     
     init(window: UIWindow){
         self.window = window
     }
     
+    func showLoadingScreen() {
+        loadingViewController = LoadingViewController()
+        loadingViewController?.modalPresentationStyle = .overCurrentContext
+        loadingViewController?.modalTransitionStyle = .crossDissolve
+        guard let loadingViewController = loadingViewController else { return }
+        self.window.rootViewController?.present(loadingViewController, animated: true)
+    }
+    
     func start() {
-
+        self.showLoadingScreen()
         if let email = UserDefaults.getStrValue(forKey: .login),
            let password = UserDefaults.getStrValue(forKey: .password) {
             tryAuth(email: email, password: password) {[weak self] success in
                 if success {
                     DispatchQueue.main.async {
+                        self?.loadingViewController?.dismiss(animated: true)
                         self?.showMainTabBar()
                     }
                 }
                 else {
                     DispatchQueue.main.async {
+                        self?.loadingViewController?.dismiss(animated: true)
                         self?.toLoginScreen()
                     }
                 }
@@ -45,6 +56,7 @@ class MainFlowCoordinator: Coordinator {
             userProfileNavigationController.navigationBar.scrollEdgeAppearance = appearance
         }
         else {
+            mainFlowTabBarController.tabBar.barTintColor = UIColor.appColor(.formBgColor)
             userProfileNavigationController.navigationBar.barTintColor = UIColor.appColor(.bgColor)
         }
 

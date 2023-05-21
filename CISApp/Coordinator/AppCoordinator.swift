@@ -12,6 +12,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        self.window.rootViewController = MainViewController()
+        self.window.makeKeyAndVisible()
         if let _ = UserDefaults.getStrValue(forKey: .login),
            let _ = UserDefaults.getStrValue(forKey: .password) {
             mainCoordinator = MainFlowCoordinator(window: window)
