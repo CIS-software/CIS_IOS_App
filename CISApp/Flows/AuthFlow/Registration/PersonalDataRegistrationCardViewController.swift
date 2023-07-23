@@ -29,7 +29,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     
     private let firstNameLabel: UILabel = {
         let label = UILabel.makeStandartLabel(text: Localization.AuthFlow.firstName,
-                                              withFont: FontLib.Text.regualr,
+                                              withFont: FontLib.Text18.regualr,
                                               color: .appColor(.blackFontColor))
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     }()
     
     private let lastNameLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.lastName,
-                                                          withFont: FontLib.Text.regualr,
+                                                          withFont: FontLib.Text18.regualr,
                                                           color: .appColor(.blackFontColor))
     
     private let lastNameField: TextField = {
@@ -57,7 +57,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     }()
     
     private let cityLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.сityToTrain,
-                                                      withFont: FontLib.Text.regualr,
+                                                      withFont: FontLib.Text18.regualr,
                                                       color: .appColor(.blackFontColor))
     
     private let cityTextField: TextField = TextField()
@@ -65,7 +65,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
     private let cityPicker = UIPickerView()
     
     private let birthdayLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.birthDay,
-                                                          withFont: FontLib.Text.regualr,
+                                                          withFont: FontLib.Text18.regualr,
                                                           color: .appColor(.blackFontColor))
     
     private let birthDatePicker: UIDatePicker = {
@@ -103,6 +103,7 @@ class PersonalDataRegistrationCardViewController: CardViewController {
         nextStepButton.addTarget(self, action: #selector(onNextButtonPressed), for: .touchUpInside)
         addViews()
         makeConstraints()
+        configureCityPicker()
     }
     
     //MARK: Binded functions

@@ -10,4 +10,8 @@ protocol AuthCardsCoordinatorProtocol {
     func toPersonalDataInput()
     
     func toMainFlow()
+    
+    func showLoadingVC()
+    
+    func hideLoadingVC()
 }

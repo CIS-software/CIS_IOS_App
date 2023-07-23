@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.overrideUserInterfaceStyle = .dark
         
-        coordinator = AppCoordinator(window: window!)
+        guard let window = window else { return }
+        
+        coordinator = AppCoordinator(window: window)
         
         coordinator?.start()
     }

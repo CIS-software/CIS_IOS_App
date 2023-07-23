@@ -28,6 +28,7 @@ class LoginCardViewModel {
     }
     
     func loginUser() {
+        self.loginStatus.value = .loading
         networkLoginManager.loginUser(email: login, password: password) {[weak self] id, acess, refresh, error in
             guard let error = error else {
                 UserDefaults.setValue(id, key: .userId)
@@ -67,6 +68,7 @@ extension LoginCardViewModel {
     }
     enum LoginStatus {
         case success
+        case loading
         case unsuccess
     }
 }

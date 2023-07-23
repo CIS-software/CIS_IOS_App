@@ -3,19 +3,23 @@ import UIKit
 
 class AuthCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
+    
     lazy var mainVC = MainViewController()
     
-    var navigationController: UINavigationController
+    let window: UIWindow
     
-    var registrationViewModel: RegistrationViewModel?
+    private var registrationViewModel: RegistrationViewModel?
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private var loadingViewController: LoadingViewController?
+    
+    init(window: UIWindow) {
+        self.window = window
     }
     
     func start() {
+        self.window.rootViewController = mainVC
+        self.window.makeKeyAndVisible()
         mainVC.authCoordinator = self
-        navigationController.pushViewController(mainVC, animated: false)
         toMainCard()
     }
 }
@@ -40,7 +44,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
         registrationViewModel = RegistrationViewModel()
         registrationViewModel?.userNetworkManager = UserNetworkManager()
         registerVC.viewModel = registrationViewModel
-        navigationController.present(registerVC, animated: true)
+        mainVC.present(registerVC, animated: true)
     }
     
     func toPersonalDataInput() {
@@ -50,7 +54,7 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                                                 dismissDuration: 0.4)
         personalDataRegisterVC.viewModel = registrationViewModel
         personalDataRegisterVC.authCoordinator = self
-        navigationController.present(personalDataRegisterVC, animated: true)
+        mainVC.present(personalDataRegisterVC, animated: true)
     }
     
     func toMainCard() {
@@ -59,15 +63,25 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
                                                 presentDuration: 0.4,
                                                 dismissDuration: 0.4)
         mainCardVC.authCoordinator = self
-        navigationController.present(mainCardVC, animated: true)
+        mainVC.present(mainCardVC, animated: true)
     }
     
     func toMainFlow() {
-        navigationController.viewControllers = []
-        let mainFlowCoordinator = MainAppCoordinator(navigationController: navigationController)
+        let mainFlowCoordinator = MainFlowCoordinator(window: window)
+        self.mainVC.dismiss(animated: false)
         childCoordinators.append(mainFlowCoordinator)
         mainFlowCoordinator.start()
     }
     
+    func showLoadingVC() {
+        loadingViewController = LoadingViewController()
+        loadingViewController?.modalPresentationStyle = .overCurrentContext
+        loadingViewController?.modalTransitionStyle = .crossDissolve
+        guard let loadingViewController else { return }
+        mainVC.present(loadingViewController, animated: true)
+    }
     
+    func hideLoadingVC() {
+        loadingViewController?.dismiss(animated: true)
+    }
 }
