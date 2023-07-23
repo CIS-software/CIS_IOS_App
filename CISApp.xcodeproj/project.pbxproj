@@ -31,6 +31,7 @@
 		FA32BB402A24DEB30043B63A /* AdaptedSectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32BB3F2A24DEB30043B63A /* AdaptedSectionViewModelProtocol.swift */; };
 		FA32BB422A24DF080043B63A /* AdaptedViewModelInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32BB412A24DF080043B63A /* AdaptedViewModelInputProtocol.swift */; };
 		FA32BB442A24E1060043B63A /* ScheduleCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32BB432A24E1060043B63A /* ScheduleCellFactory.swift */; };
+		FA32BB462A24F4920043B63A /* CalendarNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32BB452A24F4920043B63A /* CalendarNetworkManager.swift */; };
 		FA445D5629C461D30000E47E /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA445D5529C461D30000E47E /* ScheduleViewController.swift */; };
 		FA445D5829C4F48C0000E47E /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA445D5729C4F48C0000E47E /* ScheduleViewModel.swift */; };
 		FA65BE7E294F5B53007F6FB5 /* UserCreditionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BE7D294F5B53007F6FB5 /* UserCreditionals.swift */; };
@@ -46,6 +47,10 @@
 		FA86C1B129224F1D002A1782 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */; };
 		FA8810E6293D13A900F609CE /* BoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8810E5293D13A900F609CE /* BoundedButton.swift */; };
 		FA88A8562A1A650200A74488 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A8552A1A650200A74488 /* LoadingViewController.swift */; };
+		FA9C6BFD2A4E13B90033069F /* CityAndWeightStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6BFC2A4E13B90033069F /* CityAndWeightStackView.swift */; };
+		FA9C6BFF2A4E2FFA0033069F /* CityAndWeightStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6BFE2A4E2FFA0033069F /* CityAndWeightStackViewModel.swift */; };
+		FA9C6C012A4E50B70033069F /* SportsCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6C002A4E50B70033069F /* SportsCategoryView.swift */; };
+		FA9C6C032A4E50FB0033069F /* SportsCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6C022A4E50FB0033069F /* SportsCategoryViewModel.swift */; };
 		FAA6A94B290DC29F0068715F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */; };
 		FAA6A951290DD1030068715F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A950290DD1030068715F /* CardViewController.swift */; };
 		FAC04B65290327BA00B7F6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC04B64290327BA00B7F6BD /* AppDelegate.swift */; };
@@ -70,6 +75,7 @@
 		FADF6199294C344E008A5186 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF6198294C344E008A5186 /* UserNetworkManager.swift */; };
 		FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */; };
 		FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */; };
+		FAEE22D82A5DEE2800ED9EEA /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE22D72A5DEE2800ED9EEA /* UIStackView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +120,7 @@
 		FA32BB3F2A24DEB30043B63A /* AdaptedSectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptedSectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		FA32BB412A24DF080043B63A /* AdaptedViewModelInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptedViewModelInputProtocol.swift; sourceTree = "<group>"; };
 		FA32BB432A24E1060043B63A /* ScheduleCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCellFactory.swift; sourceTree = "<group>"; };
+		FA32BB452A24F4920043B63A /* CalendarNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNetworkManager.swift; sourceTree = "<group>"; };
 		FA445D5529C461D30000E47E /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		FA445D5729C4F48C0000E47E /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		FA65BE7D294F5B53007F6FB5 /* UserCreditionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditionals.swift; sourceTree = "<group>"; };
@@ -129,6 +136,10 @@
 		FA86C1B029224F1D002A1782 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		FA8810E5293D13A900F609CE /* BoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedButton.swift; sourceTree = "<group>"; };
 		FA88A8552A1A650200A74488 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FA9C6BFC2A4E13B90033069F /* CityAndWeightStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAndWeightStackView.swift; sourceTree = "<group>"; };
+		FA9C6BFE2A4E2FFA0033069F /* CityAndWeightStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAndWeightStackViewModel.swift; sourceTree = "<group>"; };
+		FA9C6C002A4E50B70033069F /* SportsCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCategoryView.swift; sourceTree = "<group>"; };
+		FA9C6C022A4E50FB0033069F /* SportsCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCategoryViewModel.swift; sourceTree = "<group>"; };
 		FAA6A94A290DC29F0068715F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		FAA6A950290DD1030068715F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		FAC04B61290327BA00B7F6BD /* CISApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CISApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +168,7 @@
 		FADF6198294C344E008A5186 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
 		FAECE0E3290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCardsCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FAECE0E5290D28B6006A0DE1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		FAEE22D72A5DEE2800ED9EEA /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +274,7 @@
 				FADF618F294B792E008A5186 /* UIViewController + Extension.swift */,
 				FA65BE7F294F6533007F6FB5 /* UserDefaults + Extension.swift */,
 				FADDB1C629D7234800EEF445 /* UIButton + extension.swift */,
+				FAEE22D72A5DEE2800ED9EEA /* UIStackView + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,6 +339,10 @@
 			children = (
 				FA65BE87294FC8C2007F6FB5 /* UserProfileVIewController.swift */,
 				FA65BE89294FC8D4007F6FB5 /* UserProfileViewModel.swift */,
+				FA9C6BFC2A4E13B90033069F /* CityAndWeightStackView.swift */,
+				FA9C6BFE2A4E2FFA0033069F /* CityAndWeightStackViewModel.swift */,
+				FA9C6C002A4E50B70033069F /* SportsCategoryView.swift */,
+				FA9C6C022A4E50FB0033069F /* SportsCategoryViewModel.swift */,
 			);
 			path = ProfileFlow;
 			sourceTree = "<group>";
@@ -461,6 +478,7 @@
 				FADF6194294BC9E0008A5186 /* EndpointTypeProtocol.swift */,
 				FADF6196294C26BE008A5186 /* CISAppEndPoint.swift */,
 				FADF6198294C344E008A5186 /* UserNetworkManager.swift */,
+				FA32BB452A24F4920043B63A /* CalendarNetworkManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -677,11 +695,14 @@
 				FADDB1C729D7234800EEF445 /* UIButton + extension.swift in Sources */,
 				FA32BB382A24CCF80043B63A /* AdaptedCellVIewModelProtocol.swift in Sources */,
 				FA036CE2290917B90052F131 /* DismissAnimation.swift in Sources */,
+				FAEE22D82A5DEE2800ED9EEA /* UIStackView + Extension.swift in Sources */,
 				FA65BE80294F6533007F6FB5 /* UserDefaults + Extension.swift in Sources */,
 				FA32BB422A24DF080043B63A /* AdaptedViewModelInputProtocol.swift in Sources */,
 				FA88A8562A1A650200A74488 /* LoadingViewController.swift in Sources */,
 				FAECE0E4290D13B8006A0DE1 /* AuthCardsCoordinatorProtocol.swift in Sources */,
+				FA9C6BFF2A4E2FFA0033069F /* CityAndWeightStackViewModel.swift in Sources */,
 				FA65BE7E294F5B53007F6FB5 /* UserCreditionals.swift in Sources */,
+				FA9C6BFD2A4E13B90033069F /* CityAndWeightStackView.swift in Sources */,
 				FA09F30329C9A79400AEEA77 /* ScheduleModel.swift in Sources */,
 				FA036CDE290917610052F131 /* PresentAnimation.swift in Sources */,
 				FA445D5629C461D30000E47E /* ScheduleViewController.swift in Sources */,
@@ -702,8 +723,10 @@
 				FA65BE90294FCFF8007F6FB5 /* MainFlowCoordinator.swift in Sources */,
 				FADF6199294C344E008A5186 /* UserNetworkManager.swift in Sources */,
 				FA32BB312A23C3D90043B63A /* ScheduleCellViewModel.swift in Sources */,
+				FA32BB462A24F4920043B63A /* CalendarNetworkManager.swift in Sources */,
 				FA32BB362A24C2710043B63A /* AdaptedTableView.swift in Sources */,
 				FA036D3A290A8A240052F131 /* AppCoordinator.swift in Sources */,
+				FA9C6C012A4E50B70033069F /* SportsCategoryView.swift in Sources */,
 				FAECE0E6290D28B6006A0DE1 /* TypeAliases.swift in Sources */,
 				FA036CE6290918810052F131 /* PresentationDirections.swift in Sources */,
 				FA65BE8D294FC945007F6FB5 /* MainTabBarVIewController.swift in Sources */,
@@ -713,6 +736,7 @@
 				FA86C1AD29223A7E002A1782 /* UIView + Extension.swift in Sources */,
 				FA32BB3E2A24DDE50043B63A /* AdaptedSectionViewModel.swift in Sources */,
 				FAA6A951290DD1030068715F /* CardViewController.swift in Sources */,
+				FA9C6C032A4E50FB0033069F /* SportsCategoryViewModel.swift in Sources */,
 				FAC04B9F29032BFD00B7F6BD /* AssetColors.swift in Sources */,
 				FAC04B67290327BA00B7F6BD /* SceneDelegate.swift in Sources */,
 				FADF6197294C26BE008A5186 /* CISAppEndPoint.swift in Sources */,

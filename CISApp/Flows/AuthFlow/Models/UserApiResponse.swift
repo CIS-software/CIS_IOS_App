@@ -11,7 +11,7 @@ extension UserApiResponse: Decodable {
         case refresh_token = "refresh-token"
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: UserApiResponseCodingKeys.self)
         
         id = try container.decode(Int.self, forKey: .id)

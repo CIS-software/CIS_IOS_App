@@ -17,7 +17,7 @@ class LoginCardViewController: CardViewController {
     
     
     private let emailLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
-                                                       withFont: FontLib.Text.regualr,
+                                                       withFont: FontLib.Text18.regualr,
                                                        color: .appColor(.blackFontColor))
     private let emailField: TextField = {
         let textField = TextField()
@@ -26,7 +26,7 @@ class LoginCardViewController: CardViewController {
     }()
     
     private let passwordLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
-                                                          withFont: FontLib.Text.regualr,
+                                                          withFont: FontLib.Text18.regualr,
                                                           color: .appColor(.blackFontColor))
     
     private let passwordField: TextField = {
@@ -89,7 +89,14 @@ class LoginCardViewController: CardViewController {
                     self?.authCoordinator?.toMainFlow()
                 }
             }
+        case .loading:
+            DispatchQueue.main.async { [weak self] in
+                self?.authCoordinator?.showLoadingVC()
+            }
         case .unsuccess:
+            DispatchQueue.main.async { [weak self] in
+                self?.authCoordinator?.hideLoadingVC()
+            }
             return
         }
     }

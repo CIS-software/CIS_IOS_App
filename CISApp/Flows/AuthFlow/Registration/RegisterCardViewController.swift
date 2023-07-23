@@ -17,7 +17,7 @@ class RegisterCardViewController: CardViewController {
                                               color: .appColor(.blackFontColor))
     
     private let emailLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.email,
-                                              withFont: FontLib.Text.regualr,
+                                              withFont: FontLib.Text18.regualr,
                                               color: .appColor(.blackFontColor))
     
     private let emailField: TextField = {
@@ -27,7 +27,7 @@ class RegisterCardViewController: CardViewController {
     }()
     
     private let passwordLabel = UILabel.makeStandartLabel(text: Localization.AuthFlow.password,
-                                              withFont: FontLib.Text.regualr,
+                                              withFont: FontLib.Text18.regualr,
                                               color: .appColor(.blackFontColor))
     private let passwordField: TextField = {
         let textField = TextField()

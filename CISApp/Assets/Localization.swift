@@ -27,7 +27,7 @@ enum Localization {
         static let city = "Город"
         static let weight = "Вес"
         static let getOut = "Выйти"
-        static let noData = "Не указано"
+        static let noData = "Н/Д"
     }
     
     enum ScheduleFlow {

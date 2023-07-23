@@ -21,11 +21,11 @@ public enum HTTPTask {
 }
 
 protocol EndpointTypeProtocol {
-    var baseURL: URL {get}
-    var path: String {get}
-    var httpMethod: HTTPMethod {get}
-    var task: HTTPTask {get}
-    var headers: HTTPHeaders? {get}
+    var baseURL: URL { get }
+    var path: String { get }
+    var httpMethod: HTTPMethod { get }
+    var task: HTTPTask { get }
+    var headers: HTTPHeaders? { get }
 }
 
 public protocol ParameterEncoder {
@@ -89,7 +89,7 @@ class Router<EndPoint: EndpointTypeProtocol>: NetworkRouter {
         let session = URLSession.shared
         do {
             let request = try buildRequest(from: route)
-            task = session.dataTask(with: request, completionHandler: {data, response, error in
+            task = session.dataTask(with: request, completionHandler: { data, response, error in
                 completion(data, response, error)
             })
         } catch {
@@ -142,6 +142,4 @@ class Router<EndPoint: EndpointTypeProtocol>: NetworkRouter {
     func cancel() {
         task?.cancel()
     }
-    
-    
 }

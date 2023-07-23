@@ -75,6 +75,12 @@ class MainFlowCoordinator: Coordinator {
         userProfileNavigationController.pushViewController(userProfileVC, animated: true)
     }
     
+    func showScheduleScreen() {
+        let scheduleViewModel = ScheduleTableViewController()
+        scheduleViewModel.coordinator = self
+        scheduleViewModel.viewModel = ScheduleViewModel()
+    }
+    
     func toLoginScreen() {
         let authCoordinator = AuthCoordinator(window: window)
         childCoordinators.append(authCoordinator)

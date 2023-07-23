@@ -8,7 +8,9 @@ class AuthCoordinator: Coordinator {
     
     let window: UIWindow
     
-    var registrationViewModel: RegistrationViewModel?
+    private var registrationViewModel: RegistrationViewModel?
+    
+    private var loadingViewController: LoadingViewController?
     
     init(window: UIWindow) {
         self.window = window
@@ -71,5 +73,15 @@ extension AuthCoordinator: AuthCardsCoordinatorProtocol {
         mainFlowCoordinator.start()
     }
     
+    func showLoadingVC() {
+        loadingViewController = LoadingViewController()
+        loadingViewController?.modalPresentationStyle = .overCurrentContext
+        loadingViewController?.modalTransitionStyle = .crossDissolve
+        guard let loadingViewController else { return }
+        mainVC.present(loadingViewController, animated: true)
+    }
     
+    func hideLoadingVC() {
+        loadingViewController?.dismiss(animated: true)
+    }
 }
